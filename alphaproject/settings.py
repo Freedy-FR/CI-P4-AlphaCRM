@@ -30,8 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-freedy-fr-ci-p4-alphacrm-m04zb00j8d.us2.codeanyapp.com',
-                 'alpha-crm-c833e9f43a21.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    'alpha-crm-c833e9f43a21.herokuapp.com', '8000-freedy-fr-ci-p4-alphacrm-m04zb00j8d.us2.codeanyapp.com',
+    'localhost'
+]
 
 
 # Application definition
