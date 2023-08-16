@@ -5,7 +5,6 @@ from .models import Customer
 
 class CustomerList(generic.ListView):
     model = Customer
-    queryset = Customer.objects.order_by("-created_on")
+    queryset = Customer.objects.all()
     template_name = "index.html"
     paginate_by = 20
-
