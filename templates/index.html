@@ -2,7 +2,29 @@
 
 <h1 class="mt-4">Testing</h1>
 
-{% for customer in customer_list %} 
-{{customer.full_name}} 
-{% endfor %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Company</th>
+      <th scope="col">Job Title</th>
+      <th scope="col">Email</th>
+      <th scope="col">Last Update</th>
+    </tr>
+  </thead>
+  {% for customer in customer_list %}
+  <tbody>
+    <tr>
+      <th scope="row">{{customer.id}}</th>
+      <td>{{customer.full_name}}</td>
+      <td>{{customer.company}}</td>
+      <td>{{customer.job_title}}</td>
+      <td>{{customer.email}}</td>
+      <td>{{customer.updated_on}}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+
 {%endblock%}
