@@ -6,11 +6,11 @@ from django.contrib.auth.decorators import login_required
 
 class CustomerList(generic.ListView):
     def get(self, request, *args, **kwargs):
-        queryset = Customer.objects.all().order_by('full_name')
+        customers = Customer.objects.all().order_by('id')
         model = Customer
         template_name = "customer_list.html"
-        paginate_by = 20
-        return render(request, 'customer_list.html', {'queryset': queryset})
+        paginate_by = 5
+        return render(request, 'customer_list.html', {'customers': customers})
 
 
 @login_required

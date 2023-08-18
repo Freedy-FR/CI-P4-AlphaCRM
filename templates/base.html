@@ -57,6 +57,9 @@
             <button class="btn" id="sidebarToggle">
               <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="bg-light logo">
+              <a class="nav-link" href="{% url 'index' %}">Alpha CRM</a>
+            </div>
             <button
               class="navbar-toggler"
               type="button"
@@ -68,11 +71,8 @@
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="bg-light logo">
-              <a class="nav-link" href="{% url 'index' %}">Alpha CRM</a>
-            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <ul class="navbar-nav ms-auto mt-2 mt-lg-0 text-center">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'account_logout' %}"
@@ -97,7 +97,8 @@
           </div>
         </nav>
         <!-- Page content-->
-        <div class="container-fluid flex-shrink-0">
+
+        <div class="container-fluid text-center">
           {% block content %}
           <!-- Content Goes here -->
           {% endblock content %}
