@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
-from django.views import generic
+from django.views import generic, View
 from .models import Customer
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
+from django.views.generic.edit import FormView
+from .forms import AddCustomerForm
 
 
 class CustomerList(generic.ListView):
@@ -9,6 +12,19 @@ class CustomerList(generic.ListView):
     model = Customer
     template_name = "customer_list.html"
     paginate_by = 10
+
+
+class AddCustomer(FormView):
+    template_name = 'add_customer.html'
+    form_class = AddCustomerForm
+    success_url = reverse_lazy('/customer_list/') 
+
+    def form_valid(self, form):
+        form.save(user=self.request.user)
+        return super().form_valid(form)
+
+
+    
 
 
 @login_required
