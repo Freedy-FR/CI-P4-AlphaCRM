@@ -5,15 +5,20 @@ from django.contrib.auth.decorators import login_required
 
 
 class CustomerList(generic.ListView):
-    customers = Customer.objects.all().order_by('id')
+    customers = Customer.objects.all()
     model = Customer
     template_name = "customer_list.html"
-    paginate_by = 5
+    paginate_by = 10
 
 
 @login_required
 def RedirectIndex(request):
     return render(request, 'index.html', {})
+
+
+@login_required
+def InstructionPage(request):
+    return render(request, 'instruction.html', {})
 
 
 # def RedirectIndex(request):
