@@ -5,12 +5,10 @@ from django.contrib.auth.decorators import login_required
 
 
 class CustomerList(generic.ListView):
-    def get(self, request, *args, **kwargs):
-        customers = Customer.objects.all().order_by('id')
-        model = Customer
-        template_name = "customer_list.html"
-        paginate_by = 5
-        return render(request, 'customer_list.html', {'customers': customers})
+    customers = Customer.objects.all().order_by('id')
+    model = Customer
+    template_name = "customer_list.html"
+    paginate_by = 5
 
 
 @login_required

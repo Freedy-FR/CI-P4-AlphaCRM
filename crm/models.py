@@ -19,7 +19,7 @@ class Customer(models.Model):
     content = models.TextField(blank=True)
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["id"]
 
     def __str__(self):
         return (f"{self.full_name} {self.company}")
