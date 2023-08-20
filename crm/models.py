@@ -4,8 +4,7 @@ from cloudinary.models import CloudinaryField
 
 
 class Customer(models.Model):
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="customer_record")
+    author = models.ForeignKey(User,on_delete=models.SET_NULL,related_name="customer_record",null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     full_name = models.CharField(max_length=200, unique=True)
@@ -17,6 +16,8 @@ class Customer(models.Model):
     country = models.CharField(max_length=100)
     postcode = models.CharField(max_length=100)
     content = models.TextField(blank=True)
+    profile_picture = CloudinaryField('image', default='placeholder')
+        
 
     class Meta:
         ordering = ["id"]

@@ -1,36 +1,34 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="col-md-6 offset-md-3 pb-4">
+<div class="card row p-4 m-4 mb-3">
   <h1 class="text-center">Add Customer</h1>
-
-  <form method="POST" action="{% url 'add_customer' %}">
+  <form
+    method="post"
+    enctype="multipart/form-data"
+    action="{% url 'add_customer' %}"
+  >
     {% csrf_token %}
-
-    <div class="card mb-3" style="max-width: 540px">
-      <div class="row g-0">
-        <div class="col-md-8">
-          <div class="card-body">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">{{ form.full_name }}</li>
-              <li class="list-group-item">{{ form.job_title }}</li>
-              <li class="list-group-item">{{ form.company }}</li>
-              <li class="list-group-item">{{ form.email }}</li>
-              <li class="list-group-item">{{ form.address }}</li>
-              <li class="list-group-item">{{ form.city }}</li>
-              <li class="list-group-item">{{ form.country }}</li>
-              <li class="list-group-item">{{ form.postcode }}</li>
-              <li class="list-group-item">{{ form.content }}</li>
-              <li class="list-group-item">{{ form.user }}</li>
-            </ul>
-            <button type="submit" class="btn btn-success">Add Customer</button>
-            <a href="{% url 'customer' %}" class="btn btn-secondary">Back</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <img src="..." class="img-fluid rounded-start" alt="..." />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ form.full_name }}</li>
+            <li class="list-group-item">{{ form.job_title }}</li>
+            <li class="list-group-item">{{ form.company }}</li>
+            <li class="list-group-item">{{ form.email }}</li>
+            <li class="list-group-item">{{ form.address }}</li>
+            <li class="list-group-item">{{ form.city }}</li>
+            <li class="list-group-item">{{ form.country }}</li>
+            <li class="list-group-item">{{ form.postcode }}</li>
+            <li class="list-group-item">{{ form.content }}</li>
+            <li class="list-group-item">{{ form.user }}</li>
+            <li class="list-group-item">{{ form.profile_picture }}</li>
+          </ul>
         </div>
       </div>
     </div>
+    <button type="submit" class="btn btn-success">Add Customer</button>
+    <a href="{% url 'customer_list' %}" class="btn btn-secondary">Back</a>
   </form>
 </div>
 

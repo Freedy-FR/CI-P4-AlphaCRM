@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views import generic, View
-from .models import Customer
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
+from .models import Customer
 from .forms import AddCustomerForm
+from cloudinary.uploader import upload
+from cloudinary.utils import cloudinary_url
 
 
 class CustomerList(generic.ListView):
@@ -14,14 +16,21 @@ class CustomerList(generic.ListView):
     paginate_by = 10
 
 
-class AddCustomer(FormView):
+class AddCustomerView(View):
     template_name = 'add_customer.html'
-    form_class = AddCustomerForm
-    success_url = reverse_lazy('/customer_list/') 
 
-    def form_valid(self, form):
-        form.save(user=self.request.user)
-        return super().form_valid(form)
+    def get(self, request):
+        form = AddCustomerForm()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = AddCustomerForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
+            return redirect('customer_list') 
+        return render(request, self.template_name, {'form': form})
 
 
     
