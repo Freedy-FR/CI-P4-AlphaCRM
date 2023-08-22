@@ -50,10 +50,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 /* Custom styles */
 
-.form-group {
-  display: inline-block;
-  margin-right: 15px;
-  width: auto;
+.clickable-row {
+  cursor: pointer;
 }
 
 /* Media queries */
