@@ -6,25 +6,58 @@
     <div class="col-md-8">
       <div class="card-body">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{ customer.full_name }}</li>
-          <li class="list-group-item">{{ customer.job_title }}</li>
-          <li class="list-group-item">{{ customer.company }}</li>
-          <li class="list-group-item">{{ customer.email }}</li>
-          <li class="list-group-item">{{ customer.address }}</li>
-          <li class="list-group-item">{{ customer.city }}</li>
-          <li class="list-group-item">{{ customer.country }}</li>
-          <li class="list-group-item">{{ customer.postcode }}</li>
-          <li class="list-group-item">{{ customer.content }}</li>
-          <li class="list-group-item">{{ customer.user }}</li>
+          <li class="list-group-item">
+            <strong>Full Name:</strong> {{ customer.full_name }}
+          </li>
+          <li class="list-group-item">
+            <strong>Job Title:</strong> {{ customer.job_title }}
+          </li>
+          <li class="list-group-item">
+            <strong>Company:</strong> {{ customer.company }}
+          </li>
+          <li class="list-group-item">
+            <strong>Email:</strong> {{ customer.email }}
+          </li>
+          <li class="list-group-item">
+            <strong>Address:</strong> {{ customer.address }}
+          </li>
+          <li class="list-group-item">
+            <strong>City:</strong> {{ customer.city }}
+          </li>
+          <li class="list-group-item">
+            <strong>Country:</strong> {{ customer.country }}
+          </li>
+          <li class="list-group-item">
+            <strong>Postcode:</strong> {{ customer.postcode }}
+          </li>
+          <li class="list-group-item">
+            <strong>Content:</strong> {{ customer.content }}
+          </li>
+          <li class="list-group-item">
+            <strong>Created On:</strong> {{ customer.created_on }}
+          </li>
+          <li class="list-group-item">
+            <strong>Updated On:</strong> {{ customer.updated_on }}
+          </li>
         </ul>
       </div>
     </div>
     <div class="col-md-4">
+      {% if "placeholder" in customer.profile_picture.url %}
       <img
-        class="img-thumbnail"
-        src="{{ customer.profile_picture.url }}"
-        alt="..."
+        class="card-img-top"
+        src="https://res.cloudinary.com/dkxnaehyl/image/upload/v1692499300/blank-profile-picture-973460_640_xguw1w.png"
       />
+      {% else %}
+      <img class="card-img-top" src=" {{ customer.profile_picture.url }}" />
+      {% endif %}
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-12 text-center">
+      <a href="" class="btn btn-primary">Update</a>
+      <a href="" class="btn btn-danger">Delete</a>
+      <a href="{% url 'customer_list' %}" class="btn btn-secondary">Back</a>
     </div>
   </div>
 </div>
