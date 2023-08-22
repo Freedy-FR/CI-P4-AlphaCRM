@@ -37,11 +37,11 @@ class AddCustomerView(View):
 
 
 class CustomerDetailView(View):
-
     def get(self, request, pk, *args, **kwargs):
         customer = get_object_or_404(Customer, pk=pk)
+        comments = customer.comments.filter(approved=True).order_by("-created_on")
 
-        return render(request, "customer_detail.html", {"customer": customer})
+        return render(request, "customer_detail.html", {"customer": customer, "comments": comments,},)
 
 
 class UpdateCustomerView(LoginRequiredMixin, UpdateView):
@@ -55,6 +55,8 @@ class DeleteCustomerView(LoginRequiredMixin, DeleteView):
     model = Customer
     template_name = 'delete_customer.html'
     success_url = reverse_lazy('customer_list')
+
+
 
 
 @login_required

@@ -114,4 +114,28 @@
   </div>
 </div>
 
+<!-- Comments section -->
+
+<div class="mt-4">
+  <h3>Comments:</h3>
+  {% for comment in customer.comments.all %}
+  <div class="card mb-3">
+    <div class="card-header">
+      Comment by {{ comment.name }} - {{ comment.created_on }}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{ comment.body }}</p>
+        <footer class="blockquote-footer">
+          By {{ comment.name }} in
+          <cite title="Comment Date">{{ comment.created_on }}</cite>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+  {% empty %}
+  <p>No comments yet.</p>
+  {% endfor %}
+</div>
+
 {% endblock %}
