@@ -9,6 +9,7 @@ from .forms import AddCustomerForm
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 from django.views.generic.edit import UpdateView
+from django.views.generic import DeleteView
 
 
 class CustomerList(generic.ListView):
@@ -47,6 +48,12 @@ class UpdateCustomerView(LoginRequiredMixin, UpdateView):
     model = Customer
     form_class = AddCustomerForm
     template_name = 'update_customer.html'
+    success_url = reverse_lazy('customer_list')
+    
+
+class DeleteCustomerView(LoginRequiredMixin, DeleteView):
+    model = Customer
+    template_name = 'delete_customer.html'
     success_url = reverse_lazy('customer_list')
 
 
