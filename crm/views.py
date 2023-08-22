@@ -10,6 +10,7 @@ from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 from django.views.generic.edit import UpdateView
 from django.views.generic import DeleteView
+from django.contrib import messages
 
 
 class CustomerList(generic.ListView):
@@ -32,8 +33,12 @@ class AddCustomerView(View):
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
-            return redirect('customer_list') 
-        return render(request, self.template_name, {'form': form})
+            messages.success(request, 'Customer added successfully.')
+            return redirect('customer_list')
+        else:
+            messages.error(request, 'Error adding customer. Please check the form data.')
+            return render(request, self.template_name, {'form': form})
+       
 
 
 class CustomerDetailView(View):
@@ -61,6 +66,7 @@ class CustomerDetailView(View):
                 comment.customer = customer
                 comment.name = request.user.username
                 comment.save()
+                messages.success(request, 'Your comment is awaiting approval!')
         else:
             comment_form = CommentForm()
 
@@ -70,20 +76,29 @@ class CustomerDetailView(View):
             "comment_form": comment_form,
         }
 
+        messages.error(request, 'Error adding comment. Please check your input.')
         return render(request, "customer_detail.html", context)
 
 
-class UpdateCustomerView(LoginRequiredMixin, UpdateView):
+class UpdateCustomerView(UpdateView):
     model = Customer
     form_class = AddCustomerForm
     template_name = 'update_customer.html'
     success_url = reverse_lazy('customer_list')
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Customer updated successfully!')
+        return super().form_valid(form)
     
 
-class DeleteCustomerView(LoginRequiredMixin, DeleteView):
+class DeleteCustomerView(DeleteView):
     model = Customer
     template_name = 'delete_customer.html'
     success_url = reverse_lazy('customer_list')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, 'Customer deleted successfully!')
+        return super().delete(request, *args, **kwargs)    
 
 
 class RedirectIndexView(View):

@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 // Custom Javascript
 
+// Table click function
 document.addEventListener("DOMContentLoaded", function () {
   var clickableRows = document.querySelectorAll(".clickable-row");
   clickableRows.forEach(function (row) {
@@ -31,3 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Messages timeout function
+
+setTimeout(function () {
+  document.querySelector(".alert").remove();
+}, 5000);
