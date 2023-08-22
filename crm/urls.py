@@ -9,4 +9,5 @@ urlpatterns = [
     path('add_customer/', login_required(views.AddCustomerView.as_view()), name='add_customer'),
     path('customer_list/', login_required(views.CustomerList.as_view()), name='customer_list'),
     path('customer_detail/<int:pk>/', login_required(views.CustomerDetailView.as_view()), name='customer_detail'),
+    path('update_customer/<int:pk>/', login_required(views.UpdateCustomerView.as_view()), name='update_customer'),
 ]

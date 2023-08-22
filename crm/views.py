@@ -8,6 +8,7 @@ from .models import Customer
 from .forms import AddCustomerForm
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
+from django.views.generic.edit import UpdateView
 
 
 class CustomerList(generic.ListView):
@@ -40,6 +41,13 @@ class CustomerDetailView(View):
         customer = get_object_or_404(Customer, pk=pk)
 
         return render(request, "customer_detail.html", {"customer": customer})
+
+
+class UpdateCustomerView(LoginRequiredMixin, UpdateView):
+    model = Customer
+    form_class = AddCustomerForm
+    template_name = 'update_customer.html'
+    success_url = reverse_lazy('customer_list')
 
 
 @login_required

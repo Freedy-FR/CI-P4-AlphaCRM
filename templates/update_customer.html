@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="card row p-4 m-4 mb-3">
-  <h1 class="text-center">Add Customer</h1>
   <form
     method="post"
     enctype="multipart/form-data"
-    action="{% url 'add_customer' %}"
+    action="{% url 'update_customer' customer.pk %}"
   >
     {% csrf_token %}
+    <h1 class="text-center">Update Customer</h1>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-8">
         <div class="card-body">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -66,21 +66,29 @@
                 {{ form.content }}
               </div>
             </li>
-            <li class="list-group-item">{{ form.user }}</li>
-            <li class="list-group-item">
-              <div class="input-group mb-3">
-                <span class="input-group-text">Profile Picture:</span>
-                {{ form.profile_picture }}
-              </div>
-            </li>
           </ul>
         </div>
+      </div>
+      <div class="col-md-4">
+        {% if "placeholder" in customer.profile_picture.url %}
+        <img
+          class="card-img-top"
+          src="https://res.cloudinary.com/dkxnaehyl/image/upload/v1692499300/blank-profile-picture-973460_640_xguw1w.png"
+        />
+        <strong>Profile Picture:</strong> {{ form.profile_picture }} {% else %}
+        <img class="card-img-top" src="{{ customer.profile_picture.url }}" />
+        <p><strong>Profile Picture:</strong> {{ form.profile_picture }}</p>
+        {% endif %}
       </div>
     </div>
     <div class="row mt-4">
       <div class="col-md-12 text-center">
-        <button type="submit" class="btn btn-success">Add Customer</button>
-        <a href="{% url 'customer_list' %}" class="btn btn-secondary">Back</a>
+        <button type="submit" class="btn btn-primary">Update Customer</button>
+        <a
+          href="{% url 'customer_detail' customer.pk %}"
+          class="btn btn-secondary"
+          >Cancel</a
+        >
       </div>
     </div>
   </form>
