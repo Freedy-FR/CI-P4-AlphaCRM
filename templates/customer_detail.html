@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="card row p-4 m-4 mb-3">
+  <h1 class="text-center">Customer - {{customer.full_name}}</h1>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ customer.full_name }}</li>
+          <li class="list-group-item">{{ customer.job_title }}</li>
+          <li class="list-group-item">{{ customer.company }}</li>
+          <li class="list-group-item">{{ customer.email }}</li>
+          <li class="list-group-item">{{ customer.address }}</li>
+          <li class="list-group-item">{{ customer.city }}</li>
+          <li class="list-group-item">{{ customer.country }}</li>
+          <li class="list-group-item">{{ customer.postcode }}</li>
+          <li class="list-group-item">{{ customer.content }}</li>
+          <li class="list-group-item">{{ customer.user }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img
+        class="img-thumbnail"
+        src="{{ customer.profile_picture.url }}"
+        alt="..."
+      />
+    </div>
+  </div>
+</div>
+
+{% endblock %}

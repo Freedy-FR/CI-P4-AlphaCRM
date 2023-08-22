@@ -27,8 +27,13 @@
         </thead>
         <tbody>
           {% for customer in customer_list %}
+
           <tr>
-            <td scope="col">{{customer.id}}</td>
+            <td scope="col">
+              <a href="{% url 'customer_detail' customer.pk %}"
+                >{{customer.id}}</a
+              >
+            </td>
             <td scope="col">{{customer.full_name}}</td>
             <td scope="col">{{customer.company}}</td>
             <td scope="col">{{customer.job_title}}</td>

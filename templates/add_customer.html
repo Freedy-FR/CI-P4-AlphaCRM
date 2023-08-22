@@ -9,7 +9,7 @@
   >
     {% csrf_token %}
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-8">
         <div class="card-body">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">{{ form.full_name }}</li>
@@ -25,6 +25,20 @@
             <li class="list-group-item">{{ form.profile_picture }}</li>
           </ul>
         </div>
+      </div>
+      <div class="col-md-4">
+        {% if "placeholder" in post.featured_image.url %}
+        <img
+          src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+          width="100%"
+        />
+        {% else %}
+        <img
+          class="img-thumbnail"
+          src="{{ customer.profile_picture.url }}"
+          alt="..."
+        />
+        {% endif %}
       </div>
     </div>
     <button type="submit" class="btn btn-success">Add Customer</button>

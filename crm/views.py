@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from .models import Customer
@@ -33,7 +34,12 @@ class AddCustomerView(View):
         return render(request, self.template_name, {'form': form})
 
 
-    
+class CustomerDetailView(View):
+
+    def get(self, request, pk, *args, **kwargs):
+        customer = get_object_or_404(Customer, pk=pk)
+
+        return render(request, "customer_detail.html", {"customer": customer})
 
 
 @login_required
