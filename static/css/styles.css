@@ -54,17 +54,18 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   cursor: pointer;
 }
 
+.custom-card-img {
+  max-height: 400px !important;
+  width: auto;
+  object-fit: contain;
+}
+
 /* Media queries */
 @media (max-width: 1000px) {
   .container-fluid {
     margin: 0px !important;
     padding: 0px !important;
   }
-
-  /* .container {
-    width: 100% !important;
-    margin: auto 0px;
-  } */
 
   .table {
     margin: 0px !important;

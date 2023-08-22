@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
 from .models import Customer
-from .forms import AddCustomerForm
+from .forms import AddCustomerForm, CommentForm
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 from django.views.generic.edit import UpdateView
@@ -40,8 +40,37 @@ class CustomerDetailView(View):
     def get(self, request, pk, *args, **kwargs):
         customer = get_object_or_404(Customer, pk=pk)
         comments = customer.comments.filter(approved=True).order_by("-created_on")
+        comment_form = CommentForm()
 
-        return render(request, "customer_detail.html", {"customer": customer, "comments": comments,},)
+        context = {
+            "customer": customer,
+            "comments": comments,
+            "comment_form": comment_form,
+        }
+
+        return render(request, "customer_detail.html", context)
+
+    def post(self, request, pk, *args, **kwargs):
+        customer = get_object_or_404(Customer, pk=pk)
+        comments = customer.comments.filter(approved=True).order_by("-created_on")
+
+        if request.method == 'POST':
+            comment_form = CommentForm(request.POST)
+            if comment_form.is_valid():
+                comment = comment_form.save(commit=False)
+                comment.customer = customer
+                comment.name = request.user.username
+                comment.save()
+        else:
+            comment_form = CommentForm()
+
+        context = {
+            "customer": customer,
+            "comments": comments,
+            "comment_form": comment_form,
+        }
+
+        return render(request, "customer_detail.html", context)
 
 
 class UpdateCustomerView(LoginRequiredMixin, UpdateView):

@@ -1,7 +1,9 @@
-from .models import Customer
+from .models import Customer, Comment
 from django import forms
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
 
 
 class AddCustomerForm(forms.ModelForm):
@@ -21,4 +23,14 @@ class AddCustomerForm(forms.ModelForm):
         model = Customer
         exclude = ('author',)
 
-    
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['body']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('submit', 'Submit'))

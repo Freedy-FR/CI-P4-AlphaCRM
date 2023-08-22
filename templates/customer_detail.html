@@ -1,8 +1,8 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load crispy_forms_tags %}
 
-<div class="card row p-4 m-4 mb-3">
+<div class="card card-size p-4 m-4 mb-3">
   <h1 class="text-center">Customer - {{customer.full_name}}</h1>
-  <div class="row">
+  <div class="row align-items-start">
     <div class="col-md-8">
       <div class="card-body">
         <ul class="list-group list-group-flush">
@@ -45,11 +45,14 @@
     <div class="col-md-4">
       {% if "placeholder" in customer.profile_picture.url %}
       <img
-        class="card-img-top"
+        class="img-thumbnail custom-card-img"
         src="https://res.cloudinary.com/dkxnaehyl/image/upload/v1692499300/blank-profile-picture-973460_640_xguw1w.png"
       />
       {% else %}
-      <img class="card-img-top" src=" {{ customer.profile_picture.url }}" />
+      <img
+        class="img-thumbnail custom-card-img"
+        src=" {{ customer.profile_picture.url }}"
+      />
       {% endif %}
     </div>
   </div>
@@ -115,27 +118,50 @@
 </div>
 
 <!-- Comments section -->
-
-<div class="mt-4">
-  <h3>Comments:</h3>
-  {% for comment in customer.comments.all %}
-  <div class="card mb-3">
-    <div class="card-header">
-      Comment by {{ comment.name }} - {{ comment.created_on }}
+<div class="card card-size p-4 m-4 mb-3">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mt-4">
+        <h5 class="card-header">Comments</h5>
+        {% if comments %}
+        <div class="card-body">
+          <div class="card-text">
+            {% for comment in comments %}
+            <div class="card mb-2">
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>{{ comment.body }}</p>
+                  <footer class="blockquote-footer">
+                    By {{ comment.user.username|capfirst }} in
+                    <cite title="Comment Date">{{ comment.created_on }}</cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% else %}
+        <div class="card-body">
+          <p>No comments yet.</p>
+        </div>
+        {% endif %}
+      </div>
     </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>{{ comment.body }}</p>
-        <footer class="blockquote-footer">
-          By {{ comment.name }} in
-          <cite title="Comment Date">{{ comment.created_on }}</cite>
-        </footer>
-      </blockquote>
+    <div class="col-md-6">
+      <div class="card mt-4">
+        <h5 class="card-header">Leave a Comment as {{username|capfirst}}:</h5>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %} {{ comment_form|crispy }}
+            <button type="submit" class="btn btn-signup btn-primary btn-lg">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-  {% empty %}
-  <p>No comments yet.</p>
-  {% endfor %}
 </div>
 
 {% endblock %}
