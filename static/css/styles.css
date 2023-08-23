@@ -1,3 +1,11 @@
+/* Colors var */
+
+:root {
+  --dark-primary-background: #212529;
+  --dark-secondary-background: #343a40;
+  --dark-text-color: #f8f9fa;
+}
+
 /* Startbootstrap code */
 #wrapper {
   overflow-x: hidden;
@@ -47,7 +55,9 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 /* Custom styles */
 
 .logo {
-  font-family: "Pacifico", cursive;
+  font-family: "Pacifico", cursive !important;
+  font-size: large;
+  color: var(--dark-primary-background) !important;
 }
 
 h1,
@@ -55,12 +65,30 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.link-text,
+thead {
   font-family: "Roboto Serif", serif;
+  color: var(--dark-primary-background) !important;
 }
 
-p {
-  font-family: "Roboto", sans-serif;
+p,
+a,
+th,
+td,
+tr,
+.btn,
+li {
+  font-family: "Roboto", sans-serif !important;
+  color: var(--dark-secondary-background) !important;
+}
+
+.input-group-text {
+  min-width: 20%;
+}
+
+.btn {
+  color: var(--dark-text-color) !important;
 }
 
 .clickable-row {
@@ -85,6 +113,16 @@ p {
   z-index: -1;
 }
 
+.dark-primary-background {
+  background-color: var(--dark-primary-background);
+  font-style: var(--dark-text-color);
+}
+
+.dark-secondary-background {
+  background-color: var(--dark-secondary-background);
+  font-style: var(--dark-text-color);
+}
+
 /* Media queries */
 @media (max-width: 1000px) {
   .container-fluid {
@@ -96,5 +134,19 @@ p {
     margin: 0px !important;
     padding: 0px !important;
     width: 100% !important;
+  }
+
+  thead,
+  th,
+  td,
+  tr {
+    margin: 0px !important;
+    padding: 0px !important;
+    width: 100%;
+    font-size: small;
+  }
+
+  .id-style {
+    width: 20px;
   }
 }

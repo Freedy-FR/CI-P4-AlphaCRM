@@ -1,4 +1,5 @@
 // Code source: Startbootstrap templates
+
 window.addEventListener("DOMContentLoaded", (event) => {
   // Toggle the side navigation
   const sidebarToggle = document.body.querySelector("#sidebarToggle");
@@ -38,8 +39,3 @@ document.addEventListener("DOMContentLoaded", function () {
 setTimeout(function () {
   document.querySelector(".alert").remove();
 }, 5000);
-
-
-
-// Dark/Light mode
-
