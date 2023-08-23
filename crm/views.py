@@ -109,3 +109,8 @@ class RedirectIndexView(View):
 class InstructionPageView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'instruction.html', {})
+
+
+class Custom404View(View):
+    def get(self, request, exception=None):
+        return render(request, '404.html', status=404)

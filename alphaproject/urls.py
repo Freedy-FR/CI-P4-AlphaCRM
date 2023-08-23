@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.decorators import login_required
+from django.conf.urls import handler404
+from crm import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("crm.urls"), name="crm-urls"),
     path('accounts/', include('allauth.urls')),
 ]
+
+handler404 = views.Custom404View.as_view()
