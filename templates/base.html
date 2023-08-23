@@ -1,193 +1,127 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <title>Alpha CRM - Customer Relationship Management</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- SEO -->
+  <meta name="description" content="Alpha CRM - Your Solution for Customer Relationship Management">
+  <meta name="keywords" content="Alpha CRM, CRM, Customer Relationship Management, Web Development">
+  <meta name="author" content="Freedy Ramos">
 
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  <title>Alpha CRM - Customer Relationship Management</title>
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
 
-    <!-- Google fonts links -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Serif:opsz@8..144&family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
-  <body class="d-flex flex-column min-vh-100">
-    <div class="d-flex" id="wrapper">
-      <!-- Sidebar-->
-      <div class="border-end bg-white" id="sidebar-wrapper">
-        <div class="sidebar-heading border-bottom">
-          <span class="link-text">Dashboard</span>
-        </div>
-        <div class="list-group list-group-flush">
-          <a
-            class="list-group-item list-group-item-action list-group-item-light p-3"
-            href="{% url 'customer_list' %}"
-            ><span class="link-text">Customers</span></a
-          >
-          <a
-            class="border-bottom list-group-item list-group-item-action list-group-item-light p-3"
-            href="{% url 'instruction' %}"
-            ><span class="link-text">Instructions</span></a
-          >
-        </div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <!-- Google fonts links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Serif:opsz@8..144&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar-->
+    <div class="border-end bg-white" id="sidebar-wrapper">
+      <div class="sidebar-heading border-bottom">
+        <span class="link-text">Dashboard</span>
       </div>
-
-      <!-- Page content wrapper-->
-      <div id="page-content-wrapper">
-        <!-- Top navigation-->
-        <nav
-          class="navbar navbar-expand-lg navbar-light bg-light border-bottom"
-        >
-          <div class="container-fluid">
-            <button class="btn" id="sidebarToggle">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="bg-light logo">
-              <a class="nav-link logo" href="{% url 'index' %}">Alpha CRM</a>
-            </div>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mt-2 mt-lg-0 text-center">
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'account_logout' %}"
-                    ><span class="link-text">Logout</span></a
-                  >
-                </li>
-                <li class="nav-item">
-                  <span class="nav-link link-text"
-                    >{{user.username|capfirst}}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-person-badge"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"
-                      />
-                      <path
-                        d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z"
-                      />
-                    </svg>
-                  </span>
-                </li>
-                {%else%}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'account_login' %}"
-                    ><span class="link-text">Login</span></a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'account_signup' %}"
-                    ><span class="link-text">Sign Up</span></a
-                  >
-                </li>
-                {% endif %}
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <!-- Page content-->
-
-        <main class="container-fluid text-center pb-5">
-          <div class="background-image"></div>
-          {% if messages %}
-          <div class="messages alert m-2">
-            {% for message in messages %}
-            <div
-              class="alert alert-{{ message.tags }} alert-dismissible fade show"
-              role="alert"
-            >
-              {{ message }}
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="alert"
-                aria-label="Close"
-              ></button>
-            </div>
-            {% endfor %}
-          </div>
-          {% endif %} {% block content %}
-          <!-- Content Goes here -->
-          {% endblock content %}
-        </main>
-
-        <footer class="py-2 bg-light fixed-bottom">
-          <div class="container-fluid px-4">
-            <div
-              class="d-flex align-items-center justify-content-between small"
-            >
-              <a
-                href="https://github.com/Freedy-FR"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-github"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                  />
-                </svg>
-              </a>
-              <div>
-                <a class="nav-link btn btn-light" href="{% url 'about_me' %}">
-                  <span class="link-text">About Me</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
+      <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'customer_list' %}"><span class="link-text">Customers</span></a>
+        <a class="border-bottom list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'instruction' %}"><span class="link-text">Instructions</span></a>
       </div>
     </div>
-    <!-- Bootstrap core JS-->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
 
-    <!-- Core theme JS-->
-    <script src="{% static 'js/scripts.js' %}"></script>
-  </body>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+      <!-- Top navigation-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+          <button class="btn" id="sidebarToggle">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="bg-light logo">
+            <a class="nav-link logo" href="{% url 'index' %}">Alpha CRM</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0 text-center">
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_logout' %}"><span class="link-text">Logout</span></a>
+              </li>
+              <li class="nav-item">
+                <span class="nav-link link-text">{{user.username|capfirst}}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-badge" viewBox="0 0 16 16">
+                    <path d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z" />
+                  </svg>
+                </span>
+              </li>
+              {%else%}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_login' %}"><span class="link-text">Login</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account_signup' %}"><span class="link-text">Sign Up</span></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Page content-->
+      <main class="container-fluid text-center pb-5">
+        <div class="background-image"></div>
+        {% if messages %}
+        <div class="messages alert m-2">
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %} {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+      </main>
+
+      <footer class="py-2 bg-light fixed-bottom">
+        <div class="container-fluid px-4">
+          <div class="d-flex align-items-center justify-content-between small">
+            <a href="https://github.com/Freedy-FR" target="_blank" rel="noopener noreferrer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+            </a>
+            <div>
+              <a class="nav-link btn btn-light" href="{% url 'about_me' %}">
+                <span class="link-text">About Me</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <!-- Core theme JS-->
+  <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+
 </html>

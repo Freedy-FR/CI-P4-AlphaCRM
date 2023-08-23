@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% block content %}
 <div class="container mt-5">
+  {% if user.is_authenticated %}
   <div class="jumbotron">
-    <h1 class="display-4">Welcome to Alpha CRM</h1>
+    <h1 class="display-4">Welcome to Alpha CRM - {{user.username|capfirst}}</h1>
     <p class="lead">Your Ultimate Customer Relationship Management Solution</p>
     <hr class="my-4" />
     <p class="lead">
@@ -37,6 +38,51 @@
       together!
     </p>
   </div>
+
+  {%else%}
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Alpha CRM</h1>
+    <p class="lead">Your Ultimate Customer Relationship Management Solution</p>
+    <hr class="my-4" />
+    <p class="lead">
+      Please <a href="{% url 'account_signup' %}">Signup</a> or
+      <a href="{% url 'account_login' %}">Login</a> to have access!
+    </p>
+
+    <p class="lead">
+      At Alpha CRM, we are dedicated to helping you optimize your customer
+      interactions and drive business success. Our innovative CRM platform
+      offers a range of powerful features designed to simplify your workflow and
+      enhance your customer relationships.
+    </p>
+    <p>
+      With <span class="font-weight-bold text-primary">Alpha CRM</span>, you
+      can:
+    </p>
+    <ul class="list-unstyled py-4">
+      <li>
+        Efficiently manage customer contacts, communications, and sales leads.
+      </li>
+      <li>
+        Track and analyze customer interactions to gain valuable insights.
+      </li>
+      <li>
+        Automate repetitive tasks, saving you time and improving productivity.
+      </li>
+      <li>
+        Personalize communication with clients to foster stronger connections.
+      </li>
+      <li>
+        Collaborate seamlessly with your team through shared notes and tasks.
+      </li>
+    </ul>
+    <p>
+      Join us on this journey to revolutionize your customer relationships.
+      Let's embark on a path of growth, efficiency, and exceptional service
+      together!
+    </p>
+  </div>
+  {% endif %}
 </div>
 
 {%endblock%}
