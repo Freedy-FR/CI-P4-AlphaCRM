@@ -111,6 +111,11 @@ class InstructionPageView(View):
         return render(request, 'instruction.html', {})
 
 
+class AboutMeView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'about_me.html', {})
+
+
 class Custom404View(View):
     def get(self, request, exception=None):
         return render(request, '404.html', status=404)

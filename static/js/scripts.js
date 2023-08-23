@@ -38,3 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
 setTimeout(function () {
   document.querySelector(".alert").remove();
 }, 5000);
+
+
+
+// Dark/Light mode
+

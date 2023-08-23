@@ -1,7 +1,3 @@
-.logo {
-  font-family: "Pacifico", cursive;
-}
-
 /* Startbootstrap code */
 #wrapper {
   overflow-x: hidden;
@@ -50,6 +46,23 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 /* Custom styles */
 
+.logo {
+  font-family: "Pacifico", cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Serif", serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
 .clickable-row {
   cursor: pointer;
 }
@@ -58,6 +71,18 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   max-height: 400px !important;
   width: auto;
   object-fit: contain;
+}
+
+.background-image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/dkxnaehyl/image/upload/v1692748719/pngwing.com_lp4nse.png");
+  background-size: 40% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.02;
+  z-index: -1;
 }
 
 /* Media queries */

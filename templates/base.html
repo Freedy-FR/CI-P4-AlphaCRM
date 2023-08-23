@@ -99,6 +99,8 @@
         <!-- Page content-->
 
         <main class="container-fluid text-center pb-5">
+          <div class="background-image"></div>
+
           <div class="messages alert m-2">
             {% for message in messages %}
             <div
@@ -137,9 +139,11 @@
                 >
               </div>
               <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms &amp; Conditions</a>
+                <a
+                  class="list-group-item list-group-item-action list-group-item-light"
+                  href="{% url 'about_me' %}"
+                  >About Me</a
+                >
               </div>
             </div>
           </div>
@@ -154,7 +158,6 @@
     ></script>
 
     <!-- Core theme JS-->
-    <!-- <script src="js/scripts.js"></script> -->
     <script src="{% static 'js/scripts.js' %}"></script>
   </body>
 </html>
