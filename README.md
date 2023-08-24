@@ -2,9 +2,9 @@
 
 Placeholder Text
 
-[Live Page]()
+[Live Page](https://alpha-crm-c833e9f43a21.herokuapp.com/)
 
-![Responsive devices](docs/)
+![Responsive devices](static/docs/amiresponsive.png)
 
 - [Alpha CRM](#alpha-crm)
   - [User Experience (UX)](#user-experience-ux)
