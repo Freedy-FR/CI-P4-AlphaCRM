@@ -18,11 +18,7 @@ class CommentInline(admin.TabularInline):
 # Registering the Comment model in the admin interface with custom display and actions
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('body', 'created_on', 'approved')
-    list_filter = ('customer', 'approved')
+    list_display = ('body', 'created_on')
+    list_filter = ('customer',)
     search_fields = ['name', 'body']
 
-    actions = ['approve_comments']
-
-    def approve_comments(self, request, queryset):
-        queryset.update(approved=True)

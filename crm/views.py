@@ -46,7 +46,7 @@ class AddCustomerView(View):
 class CustomerDetailView(View):
     def get(self, request, pk, *args, **kwargs):
         customer = get_object_or_404(Customer, pk=pk)
-        comments = customer.comments.filter(approved=True).order_by("-created_on")
+        comments = customer.comments.order_by("-created_on")
         comment_form = CommentForm()
 
         context = {
@@ -59,7 +59,7 @@ class CustomerDetailView(View):
 
     def post(self, request, pk, *args, **kwargs):
         customer = get_object_or_404(Customer, pk=pk)
-        comments = customer.comments.filter(approved=True).order_by("-created_on")
+        comments = customer.comments.order_by("-created_on")
 
         if request.method == 'POST':
             comment_form = CommentForm(request.POST)
@@ -68,7 +68,7 @@ class CustomerDetailView(View):
                 comment.customer = customer
                 comment.name = request.user.username
                 comment.save()
-                messages.success(request, 'Your comment is awaiting approval!')
+                messages.success(request, 'Comments added successfully!')
                 comment_form = CommentForm()
         else:
             comment_form = CommentForm()
