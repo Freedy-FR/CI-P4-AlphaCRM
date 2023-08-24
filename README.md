@@ -66,157 +66,199 @@ With its clean design and responsive layout, Alpha CRM simplifies customer manag
 * Organizations that want to improve customer communication.
 
 #### Site User Goals:
-* Provide an intuitive and user-friendly interface.
-* Enable users to efficiently manage customer data.
-* Facilitate the scheduling and tracking of customer interactions.
-* Offer data analysis tools for informed decision-making.
+* For users to be able to interact with the CRM intuitively.
+* For users to be able to access and manage customer data efficiently.
+* For users to be able to schedule and track customer interactions with ease.
+* For registered users to be able to securely log in and log out of their accounts.
+* For registered users to be able to add comments and updates on customer profiles.
+* For registered users to be able to add, edit, and delete customer data as needed.
 
-#### Blog Goals:
-* .
-* .
+#### Site Goals:
+* Provide an intuitive and user-friendly interface for seamless interaction.
+* Ensure efficient data management and visualization of customer information.
+* Create responsive design to offer consistent user experience across devices.
+* Provide registered users the access to comment and manage customers with full CRUD functionality.
 
 
 ### Agile Methodology
 
-This blog was developed with agile planning. Each individual user feature was split into a user story. Each user story was defined and included an acceptance criteria. The acceptance criteria were tasks to mark as complete to complete the user story. 
+The agile planning approach was employed in the development of this site, wherein each user feature was broken down into individual user stories, each accompanied by specific acceptance criteria. These criteria were then translated into tasks, serving as markers of completion for the respective user stories.
 
-Related user stories achieving a certain functionality of the blog were grouped together in to Epics.
+To enhance functionality, interconnected user stories that contributed to specific site features were grouped into broader Epics. User stories were categorized as Must Have, Should Have, or Could Have, aiding in prioritization during the implementation process.
 
-Each user story was labeled as Must Have, Should Have and Could Have to help prioritise which were most important to implement.
+As the site evolved, tasks were refined or adapted based on changing user needs and a more mature understanding of project requirements. GitHub Issues and the Kanban board within the GitHub Projects view served as the structural framework. The project was organized into several sections:
 
-As the blog evolved, tasks were added or updated, based on the changing needs / understanding of the what the blog should provide the user.
+* To Do - Serving as the initial repository for all user stories.
+* In Progress - Active development stories were tracked in this phase.
+* Done - Successfully developed stories found their place here.
+* Future - This section was reserved for 'could have' stories containing features earmarked for potential implementation at a later stage due to time limitations.
 
-This was implemented through Github Issues and the Kanban board in the projects view in Github, the project was divided into a few different sections:
-
-* To Do - All user stories were initially entered in the 'To Do' column
-* In Progress - During development stories were moved into the 'In Progress' column
-* Done - On completion they get moved into the 'Done' column
-* Future - Any 'could have' stories with features that I can look to implement at a later date, where due to time restraints I was unable to work on.
-
-Please find my Kanban Board with my user stories [here](https://).
+Feel free to explore the Kanban Board for a visual representation of the user stories [here](https://github.com/users/Freedy-FR/projects/5/views/1).
 
 
 ### Epics & User Stories
 
 **Epic 1: Website UI Features**
 
+
 User Story #1
 
-Site pagination (must have) - As a site user I .
+View Customer List (Must Have) - As a Site User, I want to view a list of customers so that I can select one to read.
 
 Acceptance Criteria:
-* As a site user .
-* As a site user .
+* As a site user, I can see a comprehensive list of customers.
+* Each customer's name is clearly visible and clickable.
+
 
 User Story #2
 
-View post (must have) - As a site user I .
+Site pagination (must have) - As a Site User, I want to be able to view a paginated list of customers, so that I can easily select a customer to view their details.
 
 Acceptance Criteria:
-* As a site user, I .
-* As a site user, I .
+* As a site user, I can view a maximum of 10 customers per page.
+* As a site user, I can navigate efficiently through the customer list using pagination controls.
+* As a site user, I can click on a customer's name to be directed to their detailed information page
+
 
 User Story #3
 
-Open a post (must have) - As a site user I .
+View Instructions (Should have) - As a Site User, I want to access instructions that guide me on how to effectively operate within the CRM.
 
 Acceptance Criteria:
-* Clicking on post opens a page where user can view the full customer details.
+* As a site user, I can access clear and concise instructions from a prominent location.
+* As a site user, I can find instructions covering key functionalities and processes within the CRM.
+* As a site user, I can use these instructions to understand tasks such as adding, editing, and deleting customers.
+
 
 User Story #4
 
-Search bar (could have) - As a site user I can use a search bar to .
+Open Customer Details (Must Have) - As a Site User, I want to click on a customer's name to open their detailed page, enabling me to read all relevant information.
 
 Acceptance Criteria:
-* As a site user, I can .
-* As a site user, I can .
-* As a site user, I can .
+* As a site user, I can click on a customer's row in the list to access their dedicated details page.
+* As a site user, I can expect to find comprehensive information about the selected customer on their details page.
 
-**Epic 2: Registration & Account Features**
 
-User Story #6 
+User Story #5
 
-Account registration (must have) - As a site user I can register an account so that I can submit     .
+View Images (Should Have) - As a Site User, I want to view images of customers on each customer's details page, enhancing my familiarity with them.
 
 Acceptance Criteria:
-* As a site user, I intuitively know where to go to sign up.
-* As a site user, I can easily register my account without issue.
+* As a site user, I can see images of customers or their company logos on the customer's details page.
+* As a site user, I can utilize these images to visually identify customers and recognize their affiliations.
+
+
+User Story #6
+
+Side Nav Collapse (Could Have) - As a Site User, I want the option to collapse the navigation bar to maximize the space available for viewing the customer list.
+
+Acceptance Criteria:
+* As a site user, I can access a feature that allows me to collapse the navigation bar.
+* Toggling the navigation bar enhances the space available for displaying the customer list.
+
 
 User Story #7
 
-Login & logout (must have) - As a registered user, I can login and logout of the site so that I can have access to my account.
+Dark/Light Theme (Could Have) - As a Site User, I want the ability to switch between dark and light themes to optimize site visibility under varying lighting conditions.
 
 Acceptance Criteria:
-* As a registered user, I can login and out successfully.
+* As a site user, I can easily select between dark and light themes from the site interface.
+* The chosen theme results in a visually comfortable experience according to the lighting conditions.
+
+**Epic 2: Registration & Account Features**
+
 
 User Story #8
 
-Comment on a Customer (must have) - As a registered user I can leave    .
+Account Registration (Must Have) - As a Site User, I want the ability to register an account, allowing me to engage by commenting, adding, and editing customer information.
 
 Acceptance Criteria:
-* As a logged-in user I can leave XXXX on a XXXX so that I can be involved in the conversation.
+* As a site user, I can complete the registration process smoothly by providing essential details.
+* After registering, I can securely log in with my credentials to access additional functionalities.
 
-User Story #9 (Check later)
 
-<!-- Like/Unlike (must have) - As a site user I can like or unlike a post.
+User Story #9
 
-Acceptance Criteria: 
-* As a logged-in user I can like or unlike a post so that I can interact with the content. -->
+Login & Logout (Must Have) - As a Site User, I want the ability to log in and out of the site securely, granting me access to my account.
 
-User Story #10 
+Acceptance Criteria:
+* As a site user, I can utilize a user-friendly login interface to log in and out securely.
+* After logging in, I can access features that are specific to registered users.
+* Logging out ensures the protection and security of my account.
 
-Add a customer (must have) - As a registered site user I can add a customer.
 
-Acceptance Criteria: 
-* As a logged-in user I can add a customer to the list.
-* As a logged-in user I can edit/delete  a customer so that I can update/delete my submission.
+User Story #10
+
+View Comments (Must Have) - As a Site User, I want to view comments on individual customers, providing insights into any specific aspects or interactions.
+
+Acceptance Criteria:
+* As a site user, I can see comments left by other users on the customer's details page.
+* As a site user, I can conveniently read and comprehend the organized comments.
+
 
 User Story #11
 
-View my customer details (could have) - As a registered site user, I can access all my customers.
+Comment on a Customer (Must Have) - As a Site User, I want to leave comments on a customer's profile, enabling me to include relevant notes and information.
 
 Acceptance Criteria: 
-* As a logged-in user I can view a page with a list of all my customers.
-* As a logged-in user I .
+* As a site user, I can find a dedicated comment section on the customer's details page.
+* I have the capability to write and submit comments, which are then displayed alongside my username.
 
-**Epic 3: Blog Features**
 
-User Story #12 
+User Story #12
 
-Manage posts (must have) - As a site admin I can create, read, update and delete users so that I can manage my customers list.
+Add a customer (must have) - As a Site User, I want to add a customer to update the customer list.
 
 Acceptance Criteria: 
-* As a site admin, I can create new customers.
-* As a site admin, I can click and read customers details.
-* As a site admin, I can edit and delete customers.
+* As a site user, I can complete a user-friendly form to input customer details.
+* As a site user, I can submit the form, and the submitted information is accurately added to the customer list.
 
-User Story #12  (Check Later)
-
-<!-- Create drafts (should have) - As a site admin I can create draft posts so that I can finish writing the content later.
-
-Acceptance Criteria:
-* As a site admin I can start a draft post.
-* As a site admin I can return back to my account and finish my draft.
-* As a site admin I can then successfully post once ready. -->
 
 User Story #13
 
-View likes (must have) - As a site user, I can view the number of likes on each post so that I can see which is the most popular or viral.
+Edit a Customer (Must Have) - As a Site User, I want to edit a customer's information to keep the list up to date.
+
+Acceptance Criteria: 
+* As a site user, I can access editing options from the customer details page.
+* As a site user, I can edit customer information, and the edited details are saved correctly in the customer list.
+
+
+User Story #14
+
+Delete a Customer (Must Have) - As a Site User, I want to delete a customer to maintain an accurate customer list.
+
+Acceptance Criteria: 
+* As a site user, I can access a delete option on the customer details page.
+* As a site user, I can delete a customer, and the customer is removed from the list accurately.
+
+**Epic 3: Blog Features**
+
+
+User Story #15
+
+Manage Comments (Must Have) - As a Site Admin, I want to have the capability to create, read, and delete comments, allowing effective management of customer-related comments.
+
+Acceptance Criteria: 
+* As a site user, I can access admin-specific controls that enable me to create, read, and delete comments.
+
+
+User Story #16
+
+Manage Customers (Must Have) - As a Site Admin, I want the authority to create, read, update, and delete customer information from the admin panel.
 
 Acceptance Criteria:
-* As a site user, I can clearly view a symbol associated with likes on a post.
-* As a site user, I can view the number of likes next to the likes symbol.
+* As a Site Admin, I can perform CRUD operations on customer records through admin controls.
 
-User Story #14 (Check Later)
-<!-- 
-View comments (must have) - As a site user, I can view comments on an individual post so that I can read the conversation.
+User Story #17
+
+Approve Comments (Could Have) - As a Site Admin, I want the ability to approve or disapprove comments, ensuring that objectionable content is filtered out.
 
 Acceptance Criteria:
-* As a site user, I can clearly view a symbol associated with comments on a post.
-* As a site user, I can view the number of comment next to the comments symbol. -->
+* As a Site Admin, I can review comments before they are displayed to others.
 
 
 - - -
+
 
 ## Design
 

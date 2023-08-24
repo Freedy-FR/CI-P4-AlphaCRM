@@ -36,12 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Messages timeout function
 
-document.addEventListener("DOMContentLoaded", function() {
-  setTimeout(function () {
-      const alertElement = document.querySelector(".alert");
-      
-      if (alertElement) {
-          alertElement.remove();
-      }
-  }, 5000);
-});
+setTimeout(function () {
+  document.querySelector(".alert").remove();
+}, 5000);
