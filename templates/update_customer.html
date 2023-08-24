@@ -80,7 +80,7 @@
         {% if "placeholder" in customer.profile_picture.url %}
         <!-- Display Placeholder Image if No Profile Picture -->
         <img class="img-thumbnail custom-card-img" src="https://res.cloudinary.com/dkxnaehyl/image/upload/v1692499300/blank-profile-picture-973460_640_xguw1w.png" alt="Placeholder image">
-        <strong>Profile Picture:</strong> {{ form.profile_picture }}
+        <p><strong>Profile Picture:</strong> {{ form.profile_picture }}</p>
         {% else %}
         <!-- Display Profile Picture if Available -->
         <img class="img-thumbnail custom-card-img" src="{{ customer.profile_picture.url }}" alt="Customer image">
