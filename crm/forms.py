@@ -8,22 +8,99 @@ from crispy_forms.layout import Submit
 
 # Form for adding a new customer
 class AddCustomerForm(forms.ModelForm):
-    # Defining form fields with custom attributes
-    full_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Full Name", "class":"form-control"}), label="")
-    job_title = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Job Title", "class":"form-control"}), label="")
-    company = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Company", "class":"form-control"}), label="")
-    email = forms.EmailField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Email", "class":"form-control"}), label="")
-    address = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Address", "class":"form-control"}), label="")
-    city = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"City", "class":"form-control"}), label="")
-    country = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Country", "class":"form-control"}), label="")
-    postcode = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Postcode", "class":"form-control"}), label="")
-    content = forms.CharField(required=False, widget=forms.Textarea(attrs={"placeholder": "If needed add customer notes here...", "class": "form-control"}),label="")
-    profile_picture = forms.ImageField(required=False, widget=forms.ClearableFileInput(attrs={"class": "form-control"}),label="Profile Picture")
-
+    full_name = forms.CharField(
+        required=True,
+        widget=forms.widgets.TextInput(attrs={
+            "placeholder": "Full Name",
+            "class": "form-control",
+            "aria-label": "Full Name"  # Add ARIA label
+        }),
+        label="Full Name"
+    )
+    job_title = forms.CharField(
+        required=True,
+        widget=forms.widgets.TextInput(attrs={
+            "placeholder": "Job Title",
+            "class": "form-control",
+            "aria-label": "Job Title"  # Add ARIA label
+        }),
+        label="Job Title"
+    )
+    company = forms.CharField(
+        required=True,
+        widget=forms.widgets.TextInput(attrs={
+            "placeholder": "Company",
+            "class": "form-control",
+            "aria-label": "Company"  # Add ARIA label
+        }),
+        label="Company"
+    )
+    email = forms.EmailField(
+        required=True,
+        widget=forms.widgets.TextInput(attrs={
+            "placeholder": "Email",
+            "class": "form-control",
+            "aria-label": "Email"  # Add ARIA label
+        }),
+        label="Email"
+    )
+    address = forms.CharField(
+        required=True,
+        widget=forms.widgets.TextInput(attrs={
+            "placeholder": "Address",
+            "class": "form-control",
+            "aria-label": "Address"  # Add ARIA label
+        }),
+        label="Address"
+    )
+    city = forms.CharField(
+        required=True,
+        widget=forms.widgets.TextInput(attrs={
+            "placeholder": "City",
+            "class": "form-control",
+            "aria-label": "City"  # Add ARIA label
+        }),
+        label="City"
+    )
+    country = forms.CharField(
+        required=True,
+        widget=forms.widgets.TextInput(attrs={
+            "placeholder": "Country",
+            "class": "form-control",
+            "aria-label": "Country"  # Add ARIA label
+        }),
+        label="Country"
+    )
+    postcode = forms.CharField(
+        required=True,
+        widget=forms.widgets.TextInput(attrs={
+            "placeholder": "Postcode",
+            "class": "form-control",
+            "aria-label": "Postcode"  # Add ARIA label
+        }),
+        label="Postcode"
+    )
+    content = forms.CharField(
+        required=False,
+        widget=forms.Textarea(attrs={
+            "placeholder": "If needed add customer notes here...",
+            "class": "form-control",
+            "aria-label": "Customer Notes"  # Add ARIA label
+        }),
+        label="Customer Notes"
+    )
+    profile_picture = forms.ImageField(
+        required=False,
+        widget=forms.ClearableFileInput(attrs={
+            "class": "form-control",
+            "aria-label": "Profile Picture"  # Add ARIA label
+        }),
+        label="Profile Picture"
+    )
     
     class Meta:
         model = Customer
-        exclude = ('author',) # Exclude the 'author' field from the form
+        exclude = ('author',)
 
 
 # Form for adding comments to a customer

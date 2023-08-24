@@ -10,7 +10,8 @@
     <div class="col m-1">
       <div class="mx-2">
         <!-- Add Customer Button -->
-        <a class="btn btn-secondary p-1 mb-2 float-end" href="{% url 'add_customer' %}">Add Customer</a>
+        <a class=" btn btn-dark p-1 mb-2 float-end" href="{% url 'add_customer' %}">Add Customer</a>
+
       </div>
       <!-- Customer Table Headings -->
       <table class="table table-striped table-hover table-bordered py-5">
@@ -47,13 +48,13 @@
       {% if page_obj.has_previous %}
       <!-- Previous Page Button -->
       <li class="px-2">
-        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">&laquo; PREV
+        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-dark">&laquo; PREV
         </a>
       </li>
       {% endif %} {% if page_obj.has_next %}
       <!-- Next Page Button -->
       <li class="px-2">
-        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary">
+        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-dark">
           NEXT &raquo;</a>
       </li>
       {% endif %}
