@@ -10,7 +10,7 @@ With its clean design and responsive layout, Alpha CRM simplifies customer manag
 
 [Live Page](https://alpha-crm-c833e9f43a21.herokuapp.com/)
 
-![Responsive devices](static/docs/amiresponsive.png)
+![Responsive devices](docs/amiresponsive.png)
 
 - [Alpha CRM](#alpha-crm)
   - [User Experience (UX)](#user-experience-ux)
@@ -262,60 +262,95 @@ Acceptance Criteria:
 
 ## Design
 
-A bootstrap template was used to help format the core blog website. Custom css styling and html was also used.
+A bootstrap template was employed to aid in structuring the foundational design of the blog website. Additionally, custom CSS styling and HTML were utilized to further enhance its appearance and layout.
 
-* [Bootstrap template](https://startbootstrap.com/template/blog-home)
+* [Bootstrap template](https://startbootstrap.com/template/simple-sidebar)
 
 ### Colour Scheme
 
 The colour scheme was taken from [Coolors](https://coolors.co/). 
 
-It was based on the image used for the [Favicon icon](https://www.pngall.com/) which I.
+The design of the website draws inspiration from the classic and organized layout of a newspaper. This choice was made to provide a structured and easy-to-navigate platform for users to access information.
 
 The use of these colours have been consistently maintained throughout the website and checked for contrast to allow easy accessibility.
 
-![Colour palette for the e](docs/)
+<details><summary>Colour palette</summary>
+<img src="docs/images/MainLightTheme.png">
+</details>
+
+
 
 ### Fonts
 
 [Google Fonts](https://fonts.google.com/) were used as below:
 
-*  is used for the title.
-*  is used for the body of the text. 
-*  is present as backup.
+* Roboto Serif is used for the title.
+* Roboto is used for the body of the text. 
+* Pacifico is used for the Logo.
 
 ### Imagery
 
-<!-- Images used were warm or colourful to fit the theme and intention of the website, which is about love of baking & sharing recipes to engage users to want to make themselves.  -->
+The website focuses on a clean, efficient design. It uses a background image for aesthetics and performance. This maintains tidiness and quick loading while avoiding image clutter.
 
-Hero image and placeholder featured image for post was taken from [Pexels](https://www.pexels.com/), the Favicon icon from [PNG All](https://www.pngall.com/).
+The background image and placeholder profile images for customers were sourced from [Pexels](https://www.pexels.com/), while the Favicon icon was obtained from [Favicon](https://favicon.io/).
 
 ### Wireframes
 
 Wireframes were created for desktop/laptop, tablet and mobile.
 
 <details><summary>Home</summary>
-<img src="docs/wireframes/">
+<img src="docs/wireframes/Home.png">
 </details>
 
-<details><summary>Login</summary>
-<img src="docs/wireframes/">
+<details><summary>Home Register</summary>
+<img src="docs/wireframes/HomeRegister.png">
 </details>
+
+<details><summary>Home Logged In</summary>
+<img src="docs/wireframes/HomeLogged.png">
+</details>
+
+<details><summary>Customer List</summary>
+<img src="docs/wireframes/CustomerList(C).png">
+</details>
+
+<details><summary>Customer Create</summary>
+<img src="docs/wireframes/CustomerCreate(C).png">
+</details>
+
+
+<details><summary>Customer Detail</summary>
+<img src="docs/wireframes/CustomerDetail(R.U.D).png">
+</details>
+
+<details><summary>Customer Delete</summary>
+<img src="docs/wireframes/CustomerDelete(D).png">
+</details>
+
+
+<details><summary>Customer Update</summary>
+<img src="docs/wireframes/CustomerUpdate(U).png">
+</details>
+
+
 
 
 ### Database Model
 
-Principles of object-oriented programming was used throughout this project and Django’s class-based generic views. Django AllAuth was used for user authentication.
 
-Observations model was followed from walkthrough project.
+Principles of object-oriented programming have been consistently applied throughout the development of this project, particularly leveraging Django's class-based generic views. To ensure secure and seamless user authentication, the project integrates Django AllAuth.
 
-A custom database model was developed for customers.
+For the Observations model, the project followed the structure and concepts established in the provided walkthrough project, aligning with best practices.
 
-![Custom database model](docs/)
+A custom database model was specifically designed to cater to the unique requirements of managing customer information. The database model, illustrated below, encompasses various fields including professional details of customers. The integration of the CloudinaryField enables efficient handling of profile pictures.
 
-The custom model was made to incorporate CRUD functionality. This allows registered users and admin to add, edit or delete customers, both from the live site and from the Django database via the Django admin page.
+![Custom database model](docs/images/AlphaCRM-DB.png)
+
+The custom model has been meticulously crafted to encompass comprehensive CRUD (Create, Read, Update, Delete) functionality. This empowers both registered users and administrators to seamlessly perform actions such as adding, editing, or removing customer records. These operations can be executed both on the live site and via Django's intuitive admin page, providing a versatile and user-friendly experience.
+
 
 - - -
+
 
 ## Features
 Below are the main features the user will come across 
