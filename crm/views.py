@@ -67,8 +67,10 @@ class CustomerDetailView(View):
                 comment.name = request.user.username
                 comment.save()
                 messages.success(request, 'Your comment is awaiting approval!')
+                comment_form = CommentForm()
         else:
             comment_form = CommentForm()
+            messages.error(request, 'Error adding comment. Please check your input.')
 
         context = {
             "customer": customer,
@@ -76,7 +78,6 @@ class CustomerDetailView(View):
             "comment_form": comment_form,
         }
 
-        messages.error(request, 'Error adding comment. Please check your input.')
         return render(request, "customer_detail.html", context)
 
 

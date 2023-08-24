@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block content %}
 <div class="container mt-5">
   {% if user.is_authenticated %}
+  <!-- Display Welcome Message for Authenticated Users -->
   <div class="jumbotron">
     <h1 class="display-4">Welcome to Alpha CRM - {{user.username|capfirst}}</h1>
     <p class="lead">Your Ultimate Customer Relationship Management Solution</p>
@@ -15,6 +16,7 @@
       With <span class="font-weight-bold text-primary">Alpha CRM</span>, you
       can:
     </p>
+    <!-- List of Benefits Users -->
     <ul class="list-unstyled py-4">
       <li>
         Efficiently manage customer contacts, communications, and sales leads.
@@ -40,11 +42,13 @@
   </div>
 
   {%else%}
+  <!-- Display Welcome Message for Non-Authenticated Users -->
   <div class="jumbotron">
     <h1 class="display-4">Welcome to Alpha CRM</h1>
     <p class="lead">Your Ultimate Customer Relationship Management Solution</p>
-    <hr class="my-4" />
+    <hr class="my-4">
     <p class="lead">
+      <!-- Signup and Login Links for Non-Authenticated Users -->
       Please <a href="{% url 'account_signup' %}">Signup</a> or
       <a href="{% url 'account_login' %}">Login</a> to have access!
     </p>
@@ -59,6 +63,7 @@
       With <span class="font-weight-bold text-primary">Alpha CRM</span>, you
       can:
     </p>
+    <!-- List of Benefits Users -->
     <ul class="list-unstyled py-4">
       <li>
         Efficiently manage customer contacts, communications, and sales leads.
@@ -84,5 +89,4 @@
   </div>
   {% endif %}
 </div>
-
 {%endblock%}

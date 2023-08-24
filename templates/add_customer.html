@@ -1,72 +1,81 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="card row p-2 m-2 mb-3">
+  <!-- Title -->
   <h1 class="text-center">Add Customer</h1>
-  <form
-    method="post"
-    enctype="multipart/form-data"
-    action="{% url 'add_customer' %}"
-  >
+  <!-- Form -->
+  <form method="post" enctype="multipart/form-data" action="{% url 'add_customer' %}">
     {% csrf_token %}
     <div class="row">
       <div class="col-md-12">
         <div class="card-body">
           <ul class="list-group list-group-flush">
+            <!-- Full Name -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Full Name:</span>
                 {{ form.full_name }}
               </div>
             </li>
+            <!-- Job Title -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Job Title:</span>
                 {{ form.job_title }}
               </div>
             </li>
+            <!-- Company -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Company:</span>
                 {{ form.company }}
               </div>
             </li>
+            <!-- Email -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Email:</span>
                 {{ form.email }}
               </div>
             </li>
+            <!-- Address -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Address:</span>
                 {{ form.address }}
               </div>
             </li>
+            <!-- City -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">City:</span>
                 {{ form.city }}
               </div>
             </li>
+            <!-- Country -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Country:</span>
                 {{ form.country }}
               </div>
             </li>
+            <!-- Postcode -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Postcode:</span>
                 {{ form.postcode }}
               </div>
             </li>
+            <!-- Content -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Content:</span>
                 {{ form.content }}
               </div>
             </li>
+            <!-- User -->
             <li class="list-group-item">{{ form.user }}</li>
+            <!-- Profile Picture -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Profile Picture:</span>
@@ -77,6 +86,7 @@
         </div>
       </div>
     </div>
+    <!-- Buttons -->
     <div class="row mt-4">
       <div class="col-md-12 text-center">
         <button type="submit" class="btn btn-success">Add Customer</button>

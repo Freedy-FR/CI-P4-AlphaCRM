@@ -28,6 +28,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['body']
+        labels = {
+            'body': 'Comment',
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

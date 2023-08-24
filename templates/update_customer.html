@@ -1,65 +1,71 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="card row p-2 m-2 mb-3">
-  <form
-    method="post"
-    enctype="multipart/form-data"
-    action="{% url 'update_customer' customer.pk %}"
-  >
+  <form method="post" enctype="multipart/form-data" action="{% url 'update_customer' customer.pk %}">
     {% csrf_token %}
     <h1 class="text-center">Update Customer</h1>
     <div class="row">
+      <!-- Left Column: Form Inputs -->
       <div class="col-md-8">
         <div class="card-body">
           <ul class="list-group list-group-flush">
+            <!-- Full Name -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Full Name:</span>
                 {{ form.full_name }}
               </div>
             </li>
+            <!-- Job Title -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Job Title:</span>
                 {{ form.job_title }}
               </div>
             </li>
+            <!-- Company -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Company:</span>
                 {{ form.company }}
               </div>
             </li>
+            <!-- Email -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Email:</span>
                 {{ form.email }}
               </div>
             </li>
+            <!-- Address -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Address:</span>
                 {{ form.address }}
               </div>
             </li>
+            <!-- City -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">City:</span>
                 {{ form.city }}
               </div>
             </li>
+            <!-- Country -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Country:</span>
                 {{ form.country }}
               </div>
             </li>
+            <!-- Postcode -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Postcode:</span>
                 {{ form.postcode }}
               </div>
             </li>
+            <!-- Content -->
             <li class="list-group-item">
               <div class="input-group mb-3">
                 <span class="input-group-text">Content:</span>
@@ -69,26 +75,24 @@
           </ul>
         </div>
       </div>
+      <!-- Right Column: Profile Picture -->
       <div class="col-md-4">
         {% if "placeholder" in customer.profile_picture.url %}
-        <img
-          class="card-img-top"
-          src="https://res.cloudinary.com/dkxnaehyl/image/upload/v1692499300/blank-profile-picture-973460_640_xguw1w.png"
-        />
-        <strong>Profile Picture:</strong> {{ form.profile_picture }} {% else %}
-        <img class="card-img-top" src="{{ customer.profile_picture.url }}" />
+        <!-- Display Placeholder Image if No Profile Picture -->
+        <img class="card-img-top custom-card-img" src="https://res.cloudinary.com/dkxnaehyl/image/upload/v1692499300/blank-profile-picture-973460_640_xguw1w.png" />
+        <strong>Profile Picture:</strong> {{ form.profile_picture }}
+        {% else %}
+        <!-- Display Profile Picture if Available -->
+        <img class="card-img-top custom-card-img" src="{{ customer.profile_picture.url }}" />
         <p><strong>Profile Picture:</strong> {{ form.profile_picture }}</p>
         {% endif %}
       </div>
     </div>
+    <!-- Buttons: Update and Cancel -->
     <div class="row mt-4">
       <div class="col-md-12 text-center">
         <button type="submit" class="btn btn-primary">Update Customer</button>
-        <a
-          href="{% url 'customer_detail' customer.pk %}"
-          class="btn btn-secondary"
-          >Cancel</a
-        >
+        <a href="{% url 'customer_detail' customer.pk %}" class="btn btn-secondary">Cancel</a>
       </div>
     </div>
   </form>

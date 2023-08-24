@@ -113,15 +113,6 @@ li {
   z-index: -1;
 }
 
-.dark-primary-background {
-  background-color: var(--dark-primary-background);
-  font-style: var(--dark-text-color);
-}
-
-.dark-secondary-background {
-  background-color: var(--dark-secondary-background);
-  font-style: var(--dark-text-color);
-}
 
 /* Media queries */
 @media (max-width: 1000px) {
@@ -144,6 +135,11 @@ li {
     padding: 0px !important;
     width: 100%;
     font-size: small;
+  }
+
+  td,
+  th {
+    width:auto;
   }
 
   .id-style {
