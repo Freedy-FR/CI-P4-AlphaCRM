@@ -6,7 +6,9 @@ from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 
 
+# Form for adding a new customer
 class AddCustomerForm(forms.ModelForm):
+    # Defining form fields with custom attributes
     full_name = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Full Name", "class":"form-control"}), label="")
     job_title = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Job Title", "class":"form-control"}), label="")
     company = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Company", "class":"form-control"}), label="")
@@ -21,19 +23,21 @@ class AddCustomerForm(forms.ModelForm):
     
     class Meta:
         model = Customer
-        exclude = ('author',)
+        exclude = ('author',) # Exclude the 'author' field from the form
 
 
+# Form for adding comments to a customer
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['body']
         labels = {
-            'body': 'Comment',
+            'body': 'Comment', # Customize label for the 'body' field
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        # Using Crispy Forms to customize form layout
         self.helper = FormHelper()
         self.helper.form_method = 'post'
         self.helper.add_input(Submit('submit', 'Submit'))

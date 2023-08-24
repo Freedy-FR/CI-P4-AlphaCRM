@@ -3,6 +3,7 @@ from django.urls import path
 from django.contrib.auth.decorators import login_required
 
 
+# Urls patterns 
 urlpatterns = [
     path('', views.RedirectIndexView.as_view(), name='index'),
     path('instruction/', login_required(views.InstructionPageView.as_view()), name='instruction'),
@@ -11,6 +12,5 @@ urlpatterns = [
     path('about_me/', views.AboutMeView.as_view(), name='about_me'),
     path('customer_detail/<int:pk>/', login_required(views.CustomerDetailView.as_view()), name='customer_detail'),
     path('update_customer/<int:pk>/', login_required(views.UpdateCustomerView.as_view()), name='update_customer'),
-    path('delete_customer/<int:pk>/', login_required(views.DeleteCustomerView.as_view()), name='delete_customer'),
-    
+    path('delete_customer/<int:pk>/', login_required(views.DeleteCustomerView.as_view()), name='delete_customer'),    
 ]

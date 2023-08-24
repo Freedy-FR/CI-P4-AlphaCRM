@@ -13,6 +13,7 @@ from django.views.generic import DeleteView
 from django.contrib import messages
 
 
+# Class for displaying the list of customers
 class CustomerList(generic.ListView):
     customers = Customer.objects.all()
     model = Customer
@@ -20,6 +21,7 @@ class CustomerList(generic.ListView):
     paginate_by = 10
 
 
+# Class for adding a new customer
 class AddCustomerView(View):
     template_name = 'add_customer.html'
 
@@ -40,7 +42,7 @@ class AddCustomerView(View):
             return render(request, self.template_name, {'form': form})
        
 
-
+# Class for viewing customer details and adding comments
 class CustomerDetailView(View):
     def get(self, request, pk, *args, **kwargs):
         customer = get_object_or_404(Customer, pk=pk)
@@ -81,6 +83,7 @@ class CustomerDetailView(View):
         return render(request, "customer_detail.html", context)
 
 
+# Class for updating customer information
 class UpdateCustomerView(UpdateView):
     model = Customer
     form_class = AddCustomerForm
@@ -92,6 +95,7 @@ class UpdateCustomerView(UpdateView):
         return super().form_valid(form)
     
 
+# Class for deleting a customer
 class DeleteCustomerView(DeleteView):
     model = Customer
     template_name = 'delete_customer.html'
@@ -102,21 +106,25 @@ class DeleteCustomerView(DeleteView):
         return super().delete(request, *args, **kwargs)    
 
 
+# Class for redirecting to the index page
 class RedirectIndexView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'index.html', {})
 
 
+# Class for displaying the instruction page
 class InstructionPageView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'instruction.html', {})
 
 
+# Class for displaying the about me page
 class AboutMeView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'about_me.html', {})
 
 
+# Class for handling custom 404 error page
 class Custom404View(View):
     def get(self, request, exception=None):
         return render(request, '404.html', status=404)

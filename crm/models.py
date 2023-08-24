@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
+# Model for storing customer information
 class Customer(models.Model):
     author = models.ForeignKey(User,on_delete=models.SET_NULL,related_name="customer_record",null=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -20,13 +21,13 @@ class Customer(models.Model):
         
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["id"] # Order records by their ID
 
     def __str__(self):
         return (f"{self.full_name} {self.company}")
 
 
-
+# Model for storing comments related to a customer
 class Comment(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=80)
@@ -35,7 +36,7 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ["created_on"]
+        ordering = ["created_on"] # Order comments by their creation
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
