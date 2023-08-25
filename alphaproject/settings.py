@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     'alpha-crm-c833e9f43a21.herokuapp.com',
     '8000-freedy-fr-ci-p4-alphacrm-m04zb00j8d.us2.codeanyapp.com',
     '8000-freedyfr-cip4alphacrm-3naglg45d4v.ws-eu104.gitpod.io',
+    '8000-freedyfr-cip4alphacrm-dvmt7m6aqg5.ws-eu104.gitpod.io',
     'localhost',
     ]
 

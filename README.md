@@ -508,7 +508,7 @@ I've applied defensive programming principles across the site to ensure that use
 * Likewise, when submitting customer information, if the obligatory fields are left unfilled, the user will be directed to fill in those required fields. The submission will not proceed until all necessary fields have been completed.
 
 
-See [TESTING.md](https://github.com/Sarohia94/Project-4-Baking-Blog/blob/main/TESTING.md) document.
+See [TESTING.md](https://github.com/Freedy-FR/CI-P4-AlphaCRM/blob/main/TESTING.md) document.
 
 #### Database Security
 
@@ -565,7 +565,7 @@ HTML, CSS, Javascript and Python.
 
 ## Testing 
 
-Details of all testing done can be viewed in depth in the [TESTING.md]() document.
+Details of all testing done can be viewed in depth in the [TESTING.md](https://github.com/Freedy-FR/CI-P4-AlphaCRM/blob/main/TESTING.md) document.
 
 - - -
 

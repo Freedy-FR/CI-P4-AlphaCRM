@@ -135,15 +135,16 @@ Testing carried out via [PEP8 Validator](https://pep8ci.herokuapp.com/), all cle
 - - -
 
 ### W3C Validator 
-No issues with the HTML pages or CSS:
+No issues with the HTML pages
+CSS validated with direct input to avoid bootstrap classes errors:
 * [Home](docs/testing/w3c/w3-home.png)
-* [About Me]()
-* [Instructions]()
-* [Customer List]()
-* [Customer Detail]()
-* [Customer Update]()
-* [Add Customer]()
-* [CSS]()
+* [About Me](docs/testing/w3c/w3-about-me.png)
+* [Instructions](docs/testing/w3c/w3-instruction.png)
+* [Customer List](docs/testing/w3c/w3-customer-list.png)
+* [Customer Detail](docs/testing/w3c/w3-customer-detail.png)
+* [Customer Update](docs/testing/w3c/w3-customer-update.png)
+* [Add Customer](docs/testing/w3c/w3-add-customer.png)
+* [CSS](docs/testing/w3c/w3-CSS.png)
 
 - - -
 
@@ -151,14 +152,7 @@ No issues with the HTML pages or CSS:
 
 * BDD, or Behaviour Driven Development, is the process used to test user stories in a non-technical way, allowing anyone to test the features of an app. User stories as documented in the readme all pass the acceptance criteria set on the Kanban board. So this has been acheived.
 
-* The Website was tested on Samsung internet, Google Chrome and Firefox browsers. No functionality issues were noted. 
-
-* There were two styling issues identified following these test, a known bug and a resolved bug. Please see issues.
-
-See below tests carried out over different browsers and devices. Responsive design was also checked throughout all stages of development using Chrome developer tools through inspect.
-
-* Tested website on mobile with [Chrome](docs/testing/manualtesting/chrome_mobile.jpg) & [Samsung internet](docs/testing/manualtesting/samsunginternet_mobile.jpg)
-* Tested on laptop with [Microsoft Edge](docs/testing/manualtesting/microsoftedge_laptop.png) and desktop with [Firefox](docs/testing/manualtesting/firefox_desktop.png).
+* The Website was tested on Samsung internet, Google Chrome, Firefox and Opera browsers. No functionality issues were noted. 
 
 - - -
 
@@ -166,25 +160,24 @@ See below tests carried out over different browsers and devices. Responsive desi
 
 [Wave](https://wave.webaim.org/) Web Accessibility Evaluation Tools were used to test accessibility. Please see the results below for each page.
 
-* [Home](docs/testing/wave/wave_home.png)
-* [Post detail](docs/testing/wave/wave_post.png)
-* [Recipe detail](docs/testing/wave/wave_recipe_post.png)
-* [Recipes](docs/testing/wave/wave_recipe.png)
-* [Sign up](docs/testing/wave/wave_signup.png)
-* [Login](docs/testing/wave/wave_login.png)
-* [User page](docs/testing/wave/wave_user_page.png)
+* [Home](docs/testing/wave/wave-home.png)
+* [About Me](docs/testing/wave/wave-about.png)
+* [Instructions](docs/testing/wave/wave-instructions.png)
+* [Customer List](docs/testing/wave/wave-customer-list.png)
+* [Customer Detail](docs/testing/wave/wave-customer-detail.png)
+* [Customer Update](docs/testing/wave/wave-customer-update.png)
+* [Add Customer](docs/testing/wave/wave-customer-add.png)
 
 - - -
 
 ## Lighthouse Testing
-* [Home](docs/testing/lighthouse/desktop_home.png)
-* [Post detail](docs/testing/lighthouse/desktop_post.png)
-* [Recipe detail](docs/testing/lighthouse/desktop_recipe_post.png)
-* [Recipes](docs/testing/lighthouse/desktop_recipes.png)
-* [Sign up](docs/testing/lighthouse/desktop_signup.png)
-* [Login](docs/testing/lighthouse/desktop_login.png)
-* [Logout](docs/testing/lighthouse/desktop_logout.png)
-* [User page](docs/testing/lighthouse/desktop_user_page.png)
+* [Home](docs/testing/wave/wave-home.png)
+* [About Me](docs/testing/wave/wave-about.png)
+* [Instructions](docs/testing/wave/wave-instructions.png)
+* [Customer List](docs/testing/wave/wave-customer-list.png)
+* [Customer Detail](docs/testing/wave/wave-customer-detail.png)
+* [Customer Update](docs/testing/wave/wave-customer-update.png)
+* [Add Customer](docs/testing/wave/wave-customer-add.png)
 
 - - -
 
