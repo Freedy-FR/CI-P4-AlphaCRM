@@ -1,3 +1,5 @@
+<base target="_blank">
+
 # Alpha CRM
 
 "Alpha CRM" is a customer relationship management (CRM) platform developed using Django, Python, HTML, CSS, and JavaScript.
@@ -353,93 +355,139 @@ The custom model has been meticulously crafted to encompass comprehensive CRUD (
 
 
 ## Features
-Below are the main features the user will come across 
+Below are the main features the user will come across.
 
-1. Favicon logo is displayed for the blog.
+1. Favicon logo is displayed for the site.
 
-![First feature](docs/features/)
+<details><summary>Favicon</summary>
+<img src="docs/features/01.favicon-feat.png">
+</details>
+<br>
+
  
-2. Navbar is present at the top of every page and includes all links to the other pages. Hovering over the link changes the colour from XXXX  to XXXX.
+2. The navbar is present at the top of every page and includes links to Login, Signup, Homepage at Logo and toggle button for sidebar.
 
-![Second feature](docs/features/)
+<details><summary>Navbar</summary>
+<img src="docs/features/02.navbar-feat.png">
+</details>
+<br>
 
-1. When a user is logged in, the title changes to the user's name with a profile icon 
+3. When a user is logged in, the navigation bar transforms into a Logout link, displaying the user's name alongside a badge icon.
 
-![Third feature](docs/features/)
+<details><summary>Logged in</summary>
+<img src="docs/features/03.navbar-logged-feat.png">
+</details>
+<br>
 
-4. The navbar is fully responsive and collapses into a hamburger menu icon on smaller screen sizes. When the hamburger is clicked, the menu options open on the left-hand side.
+4. The navbar is fully responsive and collapses into a hamburger menu icon on smaller screen sizes. When the hamburger is clicked, the menu options open on the center of the screen.
 
-![Fourth feature](docs/features/)
+<details><summary>Hamburger</summary>
+<img src="docs/features/04.navbar-hamburger-feat.png">
+</details>
+<br>
 
-5. The footer section includes working dark/light themes.
+5. The footer contains links for an 'About Me' section describing the developer, site-related information, and a link to the developer's GitHub profile.
 
-![Fifth feature](docs/features/)
+<details><summary>Footer</summary>
+<img src="docs/features/05.footer-feat.png">
+</details>
+<br>
 
-6. Home page has an about me feature to describe the dev and then general purpose related to the site for user to read.
+6. The sidebar features quick access links to the customer list and instruction page, enhancing user navigation within the site.
 
-![Sixth feature](docs/features/)
+<details><summary>Sidebar</summary>
+<img src="docs/features/06.sidebar-feat.png">
+</details>
+<br>
 
-7. Instruction page will try to give the user some knowledge and general advice related to using the CRM site.
+7. The instruction page aims to provide users with knowledge and general advice on using the site.
 
-![Seventh feature](docs/features/)
+<details><summary>Instruction</summary>
+<img src="docs/features/05.instruction-feat.png">
+</details>
+<br>
 
-8. Logged in user can add in a observations using the leave observations form which is subject to approval for screening by admin before this is displayed.
+8. Logged in user can add in comments using the comments section on the customer details page.
    
+<details><summary>Comments</summary>
+<img src="docs/features/08.comment-feat.png">
+</details>
+<br>
 
-![Eighth feature](docs/features/)
+9. There is an option to return from the customer details and customer update pages. 
 
-<!-- 9. From a post a logged in user has the ability to like or comment on posts where the count next to the respective icons will be displayed. This functionality is present for blog and recipe posts.
+<details><summary>Back Detail</summary>
+<img src="docs/features/09.1back-feat.png">
+</details>
+<br>
 
-![Ninth feature](docs/features/likes_comments_count.png) -->
+<details><summary>Back Update</summary>
+<img src="docs/features/09.2back-feat.png">
+</details>
+<br>
 
-10. There is an option to return home page from the individual customers. 
+11. Customer details page have CRUD functionality users are able to update or delete the customer if they are logged in.
 
-![Tenth feature part 1](docs/features/)
+<details><summary>CRUD</summary>
+<img src="docs/features/10.crud-feat.png">
+</details>
+<br>
 
-<!-- 11.  There is a comment prompt to user to sign up or login (links in place) if they want to engage with the post.
+12. The Update Customer functionality displays pre-filled fields, allowing users to modify and update customer information as needed.
 
-![Eleventh feature](docs/features/comment_prompt.png) -->
+<details><summary>Update Form</summary>
+<img src="docs/features/11.update-form-feat.png">
+</details>
+<br>
 
-<!-- 12. Recipe posts have CRUD functionality from the recipe post you are able to edit or delete the recipe if you are the author.
+13. The Delete Customer feature incorporates a modal message to confirm whether the user intends to proceed with the deletion.
 
-![Twelfth feature](docs/features/edit_delete.png) -->
+<details><summary>Delete Modal</summary>
+<img src="docs/features/12.delete-form-feat.png">
+</details>
+<br>
 
-13. The update customer feature appears with fields pre-filled in and the author can then change and update the customer information.
+15. The Customer List page displays a comprehensive list containing essential information about each customer.
 
-![Thirteenth feature](docs/features/)
+<details><summary>Customer List</summary>
+<img src="docs/features/13.customer-list-feat.png">
+</details>
+<br>
 
-14.  The delete customer feature will have a message to confirm the uses wants to delete.
+15. The Customer List includes a pagination feature that enables users to view a maximum of ten customers per page.
 
-![Fourteenth feature](docs/features/delete_)
+<details><summary>Pagination</summary>
+<img src="docs/features/14.pagination-feat.png">
+</details>
+<br>
 
-<!-- 15. User page is accessible once logged in. This is where the user is able to add recipes.
+16. The Main Page provides a user registration link for account sign-up, and there's a convenient login prompt for existing users (with a link).
 
-![Fifthteenth feature](docs/features/) -->
+<details><summary>Main Page</summary>
+<img src="docs/features/15.main-page-feat.png">
+</details>
+<br>
 
-<!-- 16. Add recipe form has fields to help guide the user on how to format and some required fields to help post a well rounded recipe.
+17. After logging in, the Main Page transforms into a personalized Welcome Page for the user.
 
-![Sixteenth feature](docs/features/add_recipe.png) -->
+<details><summary>Welcome Page</summary>
+<img src="docs/features/16.welcome-page-feat.png">
+</details>
+<br>
 
-<!-- 17. There is a sign up form for users to register an account. There is also a prompt for those who have an account to login (link in place).
+18. The customer detail page displays comprehensive information, including a profile picture or a placeholder if no picture is available.
 
-![Seventeenth feature](docs/features/signup.png) -->
+<details><summary>Customer Detail</summary>
+<img src="docs/features/17.detail-page-feat.png">
+</details>
+<br>
 
-<!-- 18. A user who has an account can log in. There is a prompt if the user doesn't have an account to go signup first (link in place). Again there is a message to reiterate access to liking and commenting once logged in.
-
-![Eighteenth feature](docs/features/login.png) -->
-
-<!-- 19. A user who has an logged in can log out. There is a message to confirm if the uses wishes to log out which the user has to click the button to confirm.
-
-![Nineteenth feature](docs/features/logout.png) -->
-
-<!-- 20. Consistent formatting with hero image and tagline throughout the site to confirm blog purpose.
-
-![Twentieth feature](docs/features/hero_image.png) -->
 
 ### Future features
-<!-- * From the user page the user will be able to view all their recipes and likes easily in one place so that they can see their activity on the site.
-* As the blog grows it would be ideal to implement a search bar so the user can easily find what they are looking for.
-* As the blog grows, update the recipe model to include catergories and have all recipes classified and accessible from the main site by these categories. -->
+* From the footer, users can easily switch between light and dark themes for a personalized viewing experience.
+* In the future, it will be essential to develop a user interface for administrators to either approve or delete comments.
+* In the future stages of development, it will be essential to implement further validation mechanisms to ensure the accuracy and completeness of the form fields.
+* In the future, we'll need to implement customer groups, like "read-only" and "update and read," to control user access. This way, different users will have the right permissions based on their roles.
 
 - - -
 
