@@ -29,12 +29,12 @@
           {% for customer in customer_list %}
           <!-- Customer Data Rows -->
           <tr class="clickable-row" data-href="{% url 'customer_detail' customer.pk %}">
-            <td scope="col" class="id-style">{{customer.id}}</td>
-            <td scope="col">{{customer.full_name}}</td>
-            <td scope="col">{{customer.company}}</td>
-            <td scope="col">{{customer.job_title}}</td>
-            <td scope="col">{{customer.email}}</td>
-            <td scope="col">{{customer.updated_on}}</td>
+            <td class="id-style">{{customer.id}}</td>
+            <td>{{customer.full_name}}</td>
+            <td>{{customer.company}}</td>
+            <td>{{customer.job_title}}</td>
+            <td>{{customer.email}}</td>
+            <td>{{customer.updated_on}}</td>
           </tr>
           {% endfor %}
         </tbody>
