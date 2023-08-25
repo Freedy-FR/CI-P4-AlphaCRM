@@ -109,7 +109,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['body']
         labels = {
-            'body': 'Comment', # Customize label for the 'body' field
+            'body': 'Comment',
         }
 
     def __init__(self, *args, **kwargs):

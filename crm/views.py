@@ -36,9 +36,12 @@ class AddCustomerView(View):
             messages.success(request, 'Customer added successfully.')
             return redirect('customer_list')
         else:
-            messages.error(request, 'Error adding customer. Please check the form data.')
+            messages.error(
+                request,
+                'Error adding customer. Please check the form data.'
+                )
             return render(request, self.template_name, {'form': form})
-       
+
 
 # Class for viewing customer details and adding comments
 class CustomerDetailView(View):
@@ -70,7 +73,10 @@ class CustomerDetailView(View):
                 comment_form = CommentForm()
         else:
             comment_form = CommentForm()
-            messages.error(request, 'Error adding comment. Please check your input.')
+            messages.error(
+                request,
+                'Error adding comment. Please check your input.'
+                )
 
         context = {
             "customer": customer,
@@ -91,7 +97,7 @@ class UpdateCustomerView(UpdateView):
     def form_valid(self, form):
         messages.success(self.request, 'Customer updated successfully!')
         return super().form_valid(form)
-    
+
 
 # Class for deleting a customer
 class DeleteCustomerView(DeleteView):
@@ -101,7 +107,7 @@ class DeleteCustomerView(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, 'Customer deleted successfully!')
-        return super().delete(request, *args, **kwargs)    
+        return super().delete(request, *args, **kwargs)
 
 
 # Class for redirecting to the index page

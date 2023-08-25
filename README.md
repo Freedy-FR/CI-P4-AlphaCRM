@@ -278,6 +278,7 @@ The use of these colours have been consistently maintained throughout the websit
 <details><summary>Colour palette</summary>
 <img src="docs/images/MainLightTheme.png">
 </details>
+<br>
 
 
 
