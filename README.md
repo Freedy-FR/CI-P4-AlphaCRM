@@ -50,7 +50,6 @@ With its clean design and responsive layout, Alpha CRM simplifies customer manag
     - [Local Deployment](#local-deployment)
       - [How to Clone](#how-to-clone)
       - [How to Fork](#how-to-fork)
-    - [Remote Deployment](#remote-deployment)
   - [Credits](#credits)
     - [Code](#code)
     - [Acknowledgements](#acknowledgements)
@@ -493,39 +492,37 @@ Below are the main features the user will come across.
 
 ## Security Features & Defensive Design
 
-I have tried to use defensive programming throughout the site to prevent users accessing pages, submitting requests if they don't have the relevant permissions. 
+I've applied defensive programming principles across the site to ensure that users without the necessary permissions are prevented from accessing certain pages or submitting requests. This helps maintain the integrity of the application's functionality and user experience.
 
 #### User Authentication
 
-* Django's LoginRequiredMixin is used to ensure that any requests to access secure pages by non-authenticated or, in some cases, non-admin users, are immediatley redirected to the login page.
+* Django's login_required decorator is used to ensure that any requests to access secure pages by non-authenticated or, in some cases, non-admin users, are immediatley redirected to the login page.
 
-* Django's UserPassesTestMixin is used to check any number of conditions and will deny a request with a permission error if the test_func() method returns false. As such the user is authenticated before the request is completed.
-
-* Check for authenticated users in templates by using the if statement i.e. {% if user.is_authenticated %}, before allowing access (adding comments) or visibility to links (user page).
+* Verify the user's authentication status within templates using conditional statements, such as {% if user.is_authenticated %}. This step ensures controlled access, like enabling comments or displaying links on the user page, based on the user's authentication status.
 
 #### Form Validation
 
-* Messages are present for fields forms where validation is required. If a user attempts to sign up or login without completing the relevant fields a message is displayed. User will not be able to sign in or login until all relevant fields are filled in.
+* Messages are displayed for form fields requiring validation. When a user tries to sign up or log in without completing required fields, a message appears. Users cannot sign in or log in until all necessary fields are appropriately filled.
 
-* Similary when submitting a customer if the required fields are not filled in then the user will be directed to the empty required field. This will not submit until all required fields are completed.
+* Likewise, when submitting customer information, if the obligatory fields are left unfilled, the user will be directed to fill in those required fields. The submission will not proceed until all necessary fields have been completed.
 
-!!!IMPORTANT >>>>>>>>>>>>>>>>
 
 See [TESTING.md](https://github.com/Sarohia94/Project-4-Baking-Blog/blob/main/TESTING.md) document.
 
 #### Database Security
 
-The database url and secret key are stored in the env.py file to prevent unwanted connections to the database. The env.py file was created before the initial push to GitHub.
+To prevent unauthorized access to the database, the database URL and secret key are stored in the "env.py" file. This file was established prior to the initial GitHub push.
 
-Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site.
+To enhance security, Cross-Site Request Forgery (CSRF) tokens have been implemented in all forms across the site.
 
 #### Custom Error Page
 
-This was created following a tutorial (linked in the credits) for when a user is trying to access a customer to delete it. This will give the user some information on the error and give them a link to return home.
+The approach for handling 404 errors was adopted from a tutorial (referenced in the credits section). When a user attempts to access a customer page that doesn't exist, this custom 404 page will provide the user with informative error details along with a link to navigate back to the home page.
 
-* 403 Unauthorized Access - You're not authorized to perform this action
-
-See [TESTING.md](https://github.com/Sarohia94/Project-4-Baking-Blog/blob/main/TESTING.md) document.
+<details><summary>404 page</summary>
+<img src="docs/images/404-page.png">
+</details>
+<br>
 
 - - -
 
@@ -540,36 +537,34 @@ HTML, CSS, Javascript and Python.
 * Cloudinary - to host the static files and media for the site.
 * Dj_database_url - to parse the database URL from the environment variables in Heroku.
 * Psycopg2 - as an adaptor for Python and PostgreSQL databases.
-* Summernote - as a text editor.
 * Allauth - for authentication, registration, account management.
 * Crispy forms - provides a tag and filter that lets you quickly render forms
-* Autoslug - improved slug field which can automatically populate itself from another field and preserve uniqueness of the value.
+* Pillow - is a Python Imaging Library (PIL) fork that enables image processing tasks like opening, manipulating, and saving images in various formats.
 
 ### Frameworks, Libraries & Programs Used
-* [Am I responsive?](https://ui.dev/amiresponsive) - to show game across a range of devices.
-* Git - for version control. 
-* GitHub - to save and store the code pushed from Git.
-* GitPod - using GitPod terminal to commit to Git and push to GitHub.
-* Balsamic - to create the wireframes when designing the website.
-* Dev Tools - for testing and troubleshooting.
-* [Google Fonts](https://fonts.google.com/) - to import font to apply on the website.
-* [Font Awesome](https://fontawesome.com/) - to add icons.
-* [Wave](https://wave.webaim.org/) - to test web accessibility.
-* [W3C](https://validator.w3.org/) - HTML validator.
-* [Jigsaw](https://jigsaw.w3.org/css-validator/) - CSS validator.
-* [Tiny PNG](https://tinypng.com/) - to compress images.
-* [Responsive design checker](https://responsivedesignchecker.com/) - to check responsive design for a variety of screen sizes.
-* [Favicon.io](https://favicon.io/favicon-generator/) - to creat favicon icon for the website.
-* Django - a high-level Python web framework that encourages rapid development
-* Bootstrap - a framework for building responsive, mobile-first sites.
-* Heroku - used to deploy the live project.
-* PostgreSQL - database used through heroku.
+* [Am I responsive?](https://ui.dev/amiresponsive) - A tool to test how a website appears across different devices and screen sizes.
+* GitHub - Online platform to store, manage, and collaborate on Git repositories.
+* GitPod - Online development environment that integrates with Git and GitHub.
+* Balsamic - Wireframing tool for designing website layouts.
+* Dev Tools - Built-in browser tools for testing, debugging, and inspecting web pages.
+* [Google Fonts](https://fonts.google.com/) - Source of free fonts to enhance website typography.
+* [Wave](https://wave.webaim.org/) - Tool to check web accessibility for individuals with disabilities.
+* [W3C](https://validator.w3.org/) - HTML validator by the World Wide Web Consortium.
+* [Jigsaw](https://jigsaw.w3.org/css-validator/) - CSS validator by the World Wide Web Consortium.
+* [Responsive design checker](https://responsivedesignchecker.com/) - Tool to evaluate responsive design on various screen sizes.
+* [Favicon.io](https://favicon.io/) - Generator for creating website favicon icons.
+* Django - Python web framework for rapid development of web applications.
+* Bootstrap - Front-end framework for building responsive and mobile-friendly websites.
+* Heroku - Cloud platform used to deploy live projects.
+* PostgreSQL - Relational database management system utilized via Heroku.
+* [ElephantSQL](https://www.elephantsql.com/) - Relational database management system utilized via Heroku.
+* Lucidchart: Web-based diagramming tool for visual communication.
 
 - - -
 
 ## Testing 
 
-Details of all testing done can be viewed in depth in the [TESTING.md](https://github.com/Sarohia94/Project-4-Baking-Blog/blob/main/TESTING.md) document.
+Details of all testing done can be viewed in depth in the [TESTING.md]() document.
 
 - - -
 
@@ -631,7 +626,7 @@ The site is now live and operational.
 
 #### How to Clone
 1. Sign up or log in to GitHub
-2. Go to the repository https://github.com/Sarohia94/Project-4-Baking-Blog
+2. Go to the repository [Freedy-FR](https://github.com/Freedy-FR)
 3. Go to the code dropdown and select how you'd like clone and copy the link provided
 4. Go to the new repo and enter in your workspace terminal, "git clone" (without quotes) followed by the link copied
 5. Install necessary libraries/frameworks to the terminal 
@@ -643,16 +638,6 @@ The site is now live and operational.
 2. Go to the repository 
 3. Click on the fork button towards the top right of the page 
 
-### Remote Deployment
-The website was deployed to GitHub Pages as follows:
-1. Log in to GitHub
-2. Assuming you have cloned or forked the repository, go on the "Settings" link for this repository
-3. Click on the "Pages" link on the left hand side of the page
-4. Under "Source" select "Deploy from branch" from the dropdown
-5. Under "Branch" select "main" from the dropdown
-6. Click "Save" which will then refresh the page
-7. It might take a few mins before you can refresh and view the link to the site published
-
 - - -
 
 ## Credits
@@ -660,20 +645,23 @@ The website was deployed to GitHub Pages as follows:
 ### Code
 
 For general guidance and trouble shooting:
+
 * W3Schools
 * Django Docs
 * [Bootstrap Docs](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 * Stack Overflow
-* Code Institute - Blog Walkthrough Project
-* Youtube videos by Codemy
+* Code Institute - I Think Therefore I Blog Walkthrough Project
+* [ChatGPT](https://openai.com/chatgpt) - AI-powered language model - for general purpose queries 
 
 * [Bootstrap template](https://startbootstrap.com/template/) - for general layout and design.
-* [Django CRM Tutorial](https://www.youtube.com/) - used as a guide to implement CRUD functionality
+* [Django CRM Tutorial-freeCodeCamp](https://www.youtube.com/@freecodecamp) - used as a guide to implement CRUD functionality to the CRM.
+* README template taken from [Let's Bake!](https://github.com/Sarohia94/Project-4-Baking-Blog)
+* 404-Page Tutorial for Django from [Make use of](https://www.makeuseof.com/create-custom-404-error-page-django/)
 
 Images creditted as follows:
-* Images from home blog posts as well as hero image taken from [Pexels](https://www.pexels.com/)
+* Images from customer profile taken from [Pexels](https://www.pexels.com/)
 
 ### Acknowledgements 
-Thank you to anyone taking the time to view my fourth project. Special thanks to the Slack community and the below individuals:
-* [Placeholder Mentor](https://github.com/), my mentor. Thank you for your guidance and feedback.
-* To the tutors from tutor support for their help and assistance:    
+- My Mentor [Harry Dhillon](https://github.com/Harry-Leepz) for the guidance, patience and motivation.
+- To Code Institute for the support and attention.
+- My heartfelt thanks to my amazing wife, Marcielly, for her constant support and encouragement during the entire project. Her unwavering belief in me made all the difference.
