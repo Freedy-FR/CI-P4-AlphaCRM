@@ -136,15 +136,14 @@ Testing carried out via [PEP8 Validator](https://pep8ci.herokuapp.com/), all cle
 
 ### W3C Validator 
 No issues with the HTML pages or CSS:
-* [Home](docs/testing/w3c/w3c_home.png)
-* [Post detail](docs/testing/w3c/w3c_post_detail.png)
-* [Recipe detail](docs/testing/w3c/w3c_recipe_detail.png)
-* [Recipes](docs/testing/w3c/w3c_recipes.png)
-* [Sign up](docs/testing/w3c/w3c_signup.png)
-* [Login](docs/testing/w3c/w3c_login.png)
-* [Logout](docs/testing/w3c/w3c_logout.png)
-* [User page](docs/testing/w3c/w3c_user_page.png)
-* [CSS](docs/testing/w3c/w3c_css.png)
+* [Home](docs/testing/w3c/w3-home.png)
+* [About Me]()
+* [Instructions]()
+* [Customer List]()
+* [Customer Detail]()
+* [Customer Update]()
+* [Add Customer]()
+* [CSS]()
 
 - - -
 
