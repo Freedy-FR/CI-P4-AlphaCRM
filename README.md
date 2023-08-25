@@ -16,12 +16,12 @@ With its clean design and responsive layout, Alpha CRM simplifies customer manag
 
 - [Alpha CRM](#alpha-crm)
   - [User Experience (UX)](#user-experience-ux)
-    - [User \& Blog Goals](#user--blog-goals)
+    - [User & Blog Goals](#user--blog-goals)
       - [Targeted User Goals:](#targeted-user-goals)
       - [Site User Goals:](#site-user-goals)
       - [Blog Goals:](#blog-goals)
     - [Agile Methodology](#agile-methodology)
-    - [Epics \& User Stories](#epics--user-stories)
+    - [Epics & User Stories](#epics--user-stories)
   - [Design](#design)
     - [Colour Scheme](#colour-scheme)
     - [Fonts](#fonts)
@@ -30,15 +30,15 @@ With its clean design and responsive layout, Alpha CRM simplifies customer manag
     - [Database Model](#database-model)
   - [Features](#features)
     - [Future features](#future-features)
-  - [Security Features \& Defensive Design](#security-features--defensive-design)
-      - [User Authentication](#user-authentication)
-      - [Form Validation](#form-validation)
-      - [Database Security](#database-security)
-      - [Custom Error Page](#custom-error-page)
+  - [Security Features & Defensive Design](#security-features--defensive-design)
+    - [User Authentication](#user-authentication)
+    - [Form Validation](#form-validation)
+    - [Database Security](#database-security)
+    - [Custom Error Page](#custom-error-page)
   - [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
     - [Django](#django)
-    - [Frameworks, Libraries \& Programs Used](#frameworks-libraries--programs-used)
+    - [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
   - [Testing](#testing)
   - [Deployment](#deployment)
     - [Create the live database which can be accessed by Heroku:](#create-the-live-database-which-can-be-accessed-by-heroku)
@@ -426,56 +426,56 @@ Below are the main features the user will come across.
 </details>
 <br>
 
-11. Customer details page have CRUD functionality users are able to update or delete the customer if they are logged in.
+10. Customer details page have CRUD functionality users are able to update or delete the customer if they are logged in.
 
 <details><summary>CRUD</summary>
 <img src="docs/features/10.crud-feat.png">
 </details>
 <br>
 
-12. The Update Customer functionality displays pre-filled fields, allowing users to modify and update customer information as needed.
+11. The Update Customer functionality displays pre-filled fields, allowing users to modify and update customer information as needed.
 
 <details><summary>Update Form</summary>
 <img src="docs/features/11.update-form-feat.png">
 </details>
 <br>
 
-13. The Delete Customer feature incorporates a modal message to confirm whether the user intends to proceed with the deletion.
+12. The Delete Customer feature incorporates a modal message to confirm whether the user intends to proceed with the deletion.
 
 <details><summary>Delete Modal</summary>
 <img src="docs/features/12.delete-form-feat.png">
 </details>
 <br>
 
-15. The Customer List page displays a comprehensive list containing essential information about each customer.
+13. The Customer List page displays a comprehensive list containing essential information about each customer.
 
 <details><summary>Customer List</summary>
 <img src="docs/features/13.customer-list-feat.png">
 </details>
 <br>
 
-15. The Customer List includes a pagination feature that enables users to view a maximum of ten customers per page.
+14. The Customer List includes a pagination feature that enables users to view a maximum of ten customers per page.
 
 <details><summary>Pagination</summary>
 <img src="docs/features/14.pagination-feat.png">
 </details>
 <br>
 
-16. The Main Page provides a user registration link for account sign-up, and there's a convenient login prompt for existing users (with a link).
+15. The Main Page provides a user registration link for account sign-up, and there's a convenient login prompt for existing users (with a link).
 
 <details><summary>Main Page</summary>
 <img src="docs/features/15.main-page-feat.png">
 </details>
 <br>
 
-17. After logging in, the Main Page transforms into a personalized Welcome Page for the user.
+16. After logging in, the Main Page transforms into a personalized Welcome Page for the user.
 
 <details><summary>Welcome Page</summary>
 <img src="docs/features/16.welcome-page-feat.png">
 </details>
 <br>
 
-18. The customer detail page displays comprehensive information, including a profile picture or a placeholder if no picture is available.
+17. The customer detail page displays comprehensive information, including a profile picture or a placeholder if no picture is available.
 
 <details><summary>Customer Detail</summary>
 <img src="docs/features/17.detail-page-feat.png">

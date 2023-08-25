@@ -4,13 +4,13 @@
 
 Return to [README](https://github.com/Freedy-FR/CI-P4-AlphaCRM/blob/main/README.md)
 
-* [Issues](#Issues)
-* [PEP8](#PEP8)
-* [W3C Validator](#W3C-Validator)
-* [Manual Testing](#Manual-Testing)
-* [Accessibility](#Accessiblity)
-* [Lighthouse Testing](#lighthouse-testing)
-* [User Validation Testing](#User-Validation-Testing)
+- [Issues](#issues)
+- [PEP8](#pep8)
+- [W3C Validator](#w3c-validator)
+- [Manual Testing](#manual-testing)
+- [Accessibility](#accessibility)
+- [Lighthouse Testing](#lighthouse-testing)
+- [User Validation Testing](#user-validation-testing)
 
 - - -
 
@@ -183,63 +183,84 @@ CSS validated with direct input to avoid bootstrap classes errors:
 
 ## User Validation Testing
 
-1. If user is not logged in they are unable to access / view "leave a comment" or like button.
+1. User input is validated if a logged in user tries to submit an empty comment on the customer details.
 
-![user validtaion test #1](docs/testing/uservalidation/validation_one.png)
+<details><summary>Comment Validation</summary>
+<img src="docs/testing/validation/validation-1.png">
+</details>
+<br>
 
-2. User input is validated if a logged in user tries to submit an empty comment they see the below message.
+2. User input is validated when a user logs out.
 
-![user validtaion test #2](docs/testing/uservalidation/validation_two.png)
+<details><summary>Logout Validation</summary>
+<img src="docs/testing/validation/validation-2.png">
+</details>
+<br>
 
-3. User input is validated when a user logs out.
+3. User input is validated when a user logs in.
 
-![user validtaion test #3](docs/testing/uservalidation/validation_three.png)
+<details><summary>Login Validation</summary>
+<img src="docs/testing/validation/validation-3.png">
+</details>
+<br>
 
-4. User input is validated when a user logs in.
+4. User input is validated when a user signs up.
 
-![user validtaion test #4](docs/testing/uservalidation/validation_four.png)
+<details><summary>Signup Validation</summary>
+<img src="docs/testing/validation/validation-4.png">
+</details>
+<br>
 
-5. User input is validated when a user signs up.
+5. User input is validated when incomplete forms are submitted for login and sign up.
 
-![user validtaion test #5](docs/testing/uservalidation/validation_five.png)
+<details><summary>Login Validation</summary>
+<img src="docs/testing/validation/validation-5.1.png">
+</details>
+<br>
 
-6. User input is validated when incomplete forms are submitted for login and sign up.
+<details><summary>Signup Validation</summary>
+<img src="docs/testing/validation/validation-5.2.png">
+</details>
+<br>
 
-![user validtaion test #6a](docs/testing/uservalidation/validation_six_a.png)
 
-![user validtaion test #6b](docs/testing/uservalidation/validation_six_b.png)
+6. User input is validated when password is too common when signing up.
 
-7. User input is validated when password is too common when signing up or incorrect password when logging in.
+<details><summary>Password Validation</summary>
+<img src="docs/testing/validation/validation-6.png">
+</details>
+<br>
 
-![user validtaion test #7a](docs/testing/uservalidation/validation_seven_a.png)
 
-![user validtaion test #7b](docs/testing/uservalidation/validation_seven_b.png)
+7. User input is validated when adding a customer.
 
-8. User input is validated when username is too short, exists already when signing up or incorrect password when logging in.
+<details><summary>Add Customer Validation</summary>
+<img src="docs/testing/validation/validation-7.png">
+</details>
+<br>
 
-![user validtaion test #8a](docs/testing/uservalidation/validation_eight_a.png)
+8. User input is validated when updating a customer.
 
-![user validtaion test #8b](docs/testing/uservalidation/validation_eight_b.png)
+<details><summary>Update Customer Validation</summary>
+<img src="docs/testing/validation/validation-8.png">
+</details>
+<br>
 
-![user validtaion test #8c](docs/testing/uservalidation/validation_eight_c.png)
+9. User input is validated when deleting a customer.
 
-9. User input is validated when adding a recipe.
+<details><summary>Delete Modal Validation</summary>
+<img src="docs/testing/validation/validation-9.1.png">
+</details>
+<br>
 
-![user validtaion test #9](docs/testing/uservalidation/validation_nine.png)
+<details><summary>Delete Validation</summary>
+<img src="docs/testing/validation/validation-9.2.png">
+</details>
+<br>
 
-10. User input is validated when editing a recipe.
+10. User input is validated when commenting in a customer.
 
-![user validtaion test #10](docs/testing/uservalidation/validation_ten.png)
-
-11. User input is validated when deleting a recipe.
-
-![user validtaion test #11](docs/testing/uservalidation/validation_eleven.png)
-
-12. User input is validated when comment is awaiting approval.
-
-![user validtaion test #12](docs/testing/uservalidation/validation_twelve.png)
-
-13. User input is validated when comment is liked.
-
-![user validtaion test #12](docs/testing/uservalidation/validation_thirteen.png)
-
+<details><summary>Comment Validation</summary>
+<img src="docs/testing/validation/validation-10.png">
+</details>
+<br>
