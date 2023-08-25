@@ -403,7 +403,7 @@ Below are the main features the user will come across.
 7. The instruction page aims to provide users with knowledge and general advice on using the site.
 
 <details><summary>Instruction</summary>
-<img src="docs/features/05.instruction-feat.png">
+<img src="docs/features/07.instruction-feat.png">
 </details>
 <br>
 
